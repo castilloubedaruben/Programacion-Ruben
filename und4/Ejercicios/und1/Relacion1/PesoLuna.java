@@ -1,4 +1,4 @@
-package und4.Ejercicios.und1.Relacion1;
+package und4.ejercicios.und1.Relacion1;
 // Calculadora de Peso en la Luna
 // Pide el peso del usuario y calcula cuánto pesaría en la Luna (aproximadamente el 16.5% de su peso en la Tierra).
 

@@ -13,7 +13,7 @@
   // Hay 2 alumnos aprobados y 2 alumnos suspensos.
   // La calificación media es 5.75
 
-package und4.Ejercicios.und1.Relacion6;
+package und4.ejercicios.und1.Relacion6;
 
 import java.util.Scanner;
 

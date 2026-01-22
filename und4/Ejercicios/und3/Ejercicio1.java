@@ -8,7 +8,7 @@
 // let nombreUsuario=prompt("Como es tu nombre?")
 // console.log(saludo(nombreUsuario));
 
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 public class Ejercicio1 {
 

@@ -2,7 +2,7 @@
 // Crea una función llamada contarVocalesEnCadena que reciba una cadena de texto 
 // y devuelva la cantidad total de vocales que contiene.
 
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 public class Ejercicio18 {
     

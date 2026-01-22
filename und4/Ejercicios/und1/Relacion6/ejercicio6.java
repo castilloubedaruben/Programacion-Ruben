@@ -18,7 +18,7 @@
 
 // Introduce el primer número: SALIR
 
-package und4.Ejercicios.und1.Relacion6;
+package und4.ejercicios.und1.Relacion6;
 
 public class ejercicio6 {
     

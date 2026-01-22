@@ -6,7 +6,7 @@
 // }
 // let numeroUsuario=Number(prompt("Indique un numero para saber su cuadrado"))
 // console.log(alCuadrado(numeroUsuario));
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 import java.util.Scanner;
 

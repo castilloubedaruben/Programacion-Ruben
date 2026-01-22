@@ -1,7 +1,7 @@
 // 19. Crea una función llamada capitalizarPrimeraLetra que reciba una palabra y devuelva la misma palabra con la primera letra en mayúscula. 
 // Investiga el uso de toUpperCase().
 
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 public class Ejercicio19 {
 

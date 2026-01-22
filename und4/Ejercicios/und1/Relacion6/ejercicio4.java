@@ -20,7 +20,7 @@
     // Introduce los kilómetros del viaje 3: 1000
     // ¡Combustible insuficiente!
 
-package und4.Ejercicios.und1.Relacion6;
+package und4.ejercicios.und1.Relacion6;
 
 public class ejercicio4 {
     

@@ -1,4 +1,4 @@
-package und4.Ejercicios.und1.Relacion1;
+package und4.ejercicios.und1.Relacion1;
 // 9. Repartir caramelos entre niños
 // Pide al usuario cuántos caramelos tiene y cuántos niños hay. Calcula cuántos caramelos recibe cada niño y cuántos sobran.
 

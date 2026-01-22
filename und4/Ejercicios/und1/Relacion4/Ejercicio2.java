@@ -5,7 +5,7 @@
 
 // ¡Correcto! Has adivinado el número.
 
-package und4.Ejercicios.und1.Relacion4;
+package und4.ejercicios.und1.Relacion4;
 
 import java.util.Scanner;
 

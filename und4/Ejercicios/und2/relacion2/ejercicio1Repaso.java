@@ -1,4 +1,4 @@
-package relacion1;
+package relacion2;
 import java.util.ArrayList;
 import java.util.Scanner;
 

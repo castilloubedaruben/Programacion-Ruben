@@ -8,7 +8,7 @@
 // let numeroUsuario2=Number(prompt("Indique un numero"))
 // console.log(sumar(numeroUsuario1,numeroUsuario2));
 
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 public class Ejercicio2 {
     public static double sumarDosNumeros (double primerNumero, double segundoNumero) {

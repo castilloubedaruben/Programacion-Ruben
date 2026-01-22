@@ -11,7 +11,7 @@
     // let numeroUsuario = Number(prompt("Indica un numero"))
     // console.log(factorial(numeroUsuario));
 
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 import java.util.Scanner;
 

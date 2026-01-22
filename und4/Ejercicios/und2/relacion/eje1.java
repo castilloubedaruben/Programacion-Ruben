@@ -1,4 +1,4 @@
-package relacion1;
+package relacion;
 
 // 1. Crear un array y acceder a los elementos
 // Crea un array llamado numeros que contenga los números [5, 10, 15, 20].

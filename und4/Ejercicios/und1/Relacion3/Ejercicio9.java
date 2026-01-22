@@ -16,7 +16,7 @@
 //     console.log("La suma de los digitos de tu número es igual a " + sumaDigitos)
 // }
 
-package und4.Ejercicios.und1.Relacion3;
+package und4.ejercicios.und1.Relacion3;
 import java.util.Scanner;
 public class Ejercicio9 {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 // 20. Crea una función llamada contarPalabrasEnCadena que reciba una cadena y devuelva el número de palabras que contiene, 
 // asumiendo que están separadas por espacios. Investiga el uso de split().
 
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 public class Ejercicio20 {
     public static int contarPalabrasEnCadena (String texto) {

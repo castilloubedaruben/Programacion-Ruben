@@ -3,7 +3,7 @@
 // Añade los colores "rojo", "verde" y "azul" al final del array y luego imprime el array.
 
 
-package relacion1;
+package relacion;
 
 import java.util.ArrayList;
 import java.util.Arrays;

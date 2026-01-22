@@ -2,7 +2,7 @@
 // Crea una función llamada revertirCadena que reciba una cadena de texto
 // y devuelva la misma cadena con los caracteres en orden inverso.
 
-package und4.Ejercicios.und3;
+package und4.ejercicios.und3;
 
 public class Ejercicio17 {
 
