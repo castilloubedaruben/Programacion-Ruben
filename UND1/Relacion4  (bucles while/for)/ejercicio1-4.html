@@ -1,0 +1,25 @@
+<!-- 🔹 Ejercicio 1 – Bucle for
+
+Escribe un programa que pida al usuario un número entero positivo y muestre la tabla de multiplicar de ese número (del 1 al 10) usando un bucle for.
+
+👉 Ejemplo de salida si el usuario introduce 3:
+
+3 x 1 = 3  
+3 x 2 = 6  
+3 x 3 = 9  
+...  
+3 x 10 = 30   -->
+
+<script>
+
+    let numeroUsuario = Number(prompt("Indique un numero para saber su tabla de multiplicación."))
+    let resultado = 0
+    let iteracion = 0
+
+    for (let i = 0; i <10; i++) {
+        iteracion = i+1
+        resultado = numeroUsuario * iteracion
+        console.log(numeroUsuario + "*" + iteracion + "=" + resultado)
+    }
+
+</script>

@@ -1,0 +1,59 @@
+<script>
+    // 4. Gestión de Inventario de una Librería
+    // Escribe un programa que permita al usuario gestionar el inventario de una librería. 
+    // El programa debe usar dos arrays: uno para almacenar los títulos de los libros y otro para almacenar las cantidades disponibles de cada libro. 
+    // El usuario debe poder realizar las siguientes acciones a través de un menú:
+
+    // Añadir un nuevo libro al inventario (con su título y cantidad).
+    // Actualizar la cantidad de un libro existente.
+    // Ver el inventario completo (título y cantidad de cada libro).
+    // Salir del programa.
+    // El programa debe actualizar el inventario según las acciones del usuario y seguir ejecutándose hasta que se elija la opción de salir.
+
+
+    let libros = []
+    let cantidadLibros = []
+
+    let anadirLibros = ""
+    let anadirCantidad = 0
+    let opciones = 0
+    let libroModificar = 0
+
+
+    console.log("1.Añadir un nuevo libro al inventario (con su título y cantidad)\n2.Actualizar la cantidad de un libro existente.\n3.Ver el inventario completo (título y cantidad de cada libro).\n4.Salir del programa.")
+
+    while (opciones != 4) {
+        opciones = Number(prompt("Indique que opcion quiere realizar"))
+        while (opciones<=0 || opciones >=5) {
+            opciones = Number(prompt("Indique que opcion quiere realizar(1-2-3-4)"))
+        }
+        if (opciones == 1) {
+            anadirLibros = prompt("Introduce el titulo de un nuevo libro")
+            libros.push(anadirLibros)
+            anadirCantidad = Number(prompt("Introduce la cantidad de libros"))
+                while (anadirCantidad<0) {
+                    alert("Introduce una cantidad no negativa")
+                    anadirCantidad = Number(prompt("Introduce la cantidad de libros"))
+                }
+            cantidadLibros.push(anadirCantidad)
+        } if (opciones == 2) {
+            libroModificar = prompt("Indique el libro que quiere modificar")
+            for (let i = 0; i < libros.length ; i++) {
+                if (libroModificar == libros[i]) {
+                    cantidadLibros[i] = Number(prompt("Indique la nueva cantidad de libros que hay en stock"))
+                    while (cantidadLibros[i]<0) {
+                    alert("Introduce una cantidad no negativa")
+                    cantidadLibros = Number(prompt("Introduce la cantidad de libros"))
+                }
+                }
+            } alert("Libro no encontrado")
+        } if (opciones == 3) {
+            console.log(libros);
+            console.log(cantidadLibros);
+        }
+    }
+console.log("Saliste del programa!")
+
+
+
+</script>

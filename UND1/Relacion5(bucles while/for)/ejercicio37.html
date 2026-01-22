@@ -1,0 +1,17 @@
+<script> 
+// 37.-
+// Solicitar una palabra. Solicitar otra palabra hasta que la segunda palabra coincida con la palabra inicial.
+
+  let palabraUsuario1 = String(prompt("Escribe una palabra"));
+  let palabraUsuario2 = String(prompt("Escribe otra palabra"));
+
+  if (palabraUsuario1 == palabraUsuario2) {
+    console.log("Has salido del programa al escribir la misma palabra");
+  } else {
+    while (palabraUsuario1 != palabraUsuario2) {
+      palabraUsuario2 = "";
+      palabraUsuario2 = prompt("Escribe una nueva palabra");
+    }
+  }
+  console.log("Has salido del programa al escribir la misma palabra");
+</script>

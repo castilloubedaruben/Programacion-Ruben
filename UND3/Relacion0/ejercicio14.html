@@ -1,0 +1,23 @@
+<script>
+// 14. Calcular el promedio de un array
+// Crea una función llamada promedioArray que reciba un array de números y devuelva su promedio.
+
+function promedioArray(array) {
+    let promedio = 0
+    for (const numero of array) {
+        promedio+=numero
+    }
+    return promedio/array.length
+}
+
+let numerosRandom = []
+while (numerosRandom.length<5) {
+    numeroAleatorio=Math.floor(Math.random() * 11)
+    numerosRandom.push(numeroAleatorio)
+}
+console.log(numerosRandom);
+
+console.log(promedioArray(numerosRandom));
+
+
+</script>

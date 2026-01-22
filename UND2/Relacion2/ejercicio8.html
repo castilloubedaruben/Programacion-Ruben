@@ -1,0 +1,49 @@
+<script>
+    // 8. Gestión de Reservas de un Restaurante
+
+    // Escribe un programa para gestionar las reservas en un restaurante.
+    // Usa dos arrays: uno para los nombres de los clientes que han hecho una reserva y otro para almacenar el número de personas que cada cliente ha reservado.
+    // El programa debe mostrar un menú con las siguientes opciones:
+
+    // 1.Añadir una nueva reserva (nombre del cliente y número de personas).
+    // 2.Ver la lista de reservas actuales.
+    // 3.Calcular el total de personas reservadas para ese día.
+    // 4.Cancelar una reserva existente (por nombre del cliente).
+    // 5.Salir del programa.
+
+
+    let nombreReserva = ["R", "C", "T"]
+    let numeroPersonasReserva = [5, 6, 2]
+    let nuevaReserva = ""
+    let cantidadPersonas = 0
+    let totalPersonas=0
+
+    console.log("1.Añadir una nueva reserva (nombre del cliente y número de personas)\n2.Ver la lista de reservas actuales.\n3.Calcular el total de personas reservadas para ese día.\n4.Cancelar una reserva existente (por nombre del cliente).\n5.Salir del programa.");
+
+    let opciones = Number(prompt("Elige una opcion:"))
+
+    while (opciones != 5) {
+        opciones = Number(prompt("Elige una opcion:"))
+        if (opciones == 1) {
+            nuevaReserva = prompt("Nombre del cliente de la nueva reserva")
+            cantidadPersonas = Number(prompt("¿Para cuantas personas es la reserva?"))
+            nombreReserva.push(nuevaReserva)
+            numeroPersonasReserva.push(cantidadPersonas)
+        } if (opciones == 2) {
+            for (let i = 0; i < nombreReserva.length; i++) {
+                console.log(`Reserva ${i}:${nombreReserva[i]}-${numeroPersonasReserva[i]} personas`);
+            }
+        } if (opciones==3) {
+            totalPersonas=0
+            for (let numero of numeroPersonasReserva) {
+                totalPersonas+=numero
+            }
+            console.log("El total de personas para hoy en el restaurante es de " + totalPersonas);
+        } if (opciones==4) {
+            
+        }
+    }
+    console.log("Salir del programa");
+
+
+</script>

@@ -1,0 +1,43 @@
+<script>
+// 4. Buscaminas lineal
+// Crea un array de 10 posiciones indicando si hay mina o no, y otro array para marcar posiciones descubiertas.
+// El usuario introduce posiciones a descubrir hasta que:
+
+// Encuentra una mina o descubre todas las posiciones sin mina.
+// Al descubrir una casilla segura, debe mostrarse cuántas minas hay en sus casillas vecinas.
+
+let buscaminas = ["no","no","si","no","no","no","no","no","si","no",]
+let posicionesDescubiertas = ["❌​","❌​","❌​","❌​","❌​","❌​","❌​","❌​","❌​","❌​"]
+let jugadaUsuario = 0
+let finjuego = false
+let acierto="✔️​"
+let error="​💣​"
+
+
+console.log(posicionesDescubiertas.join("-"));
+
+while (jugadaUsuario!="si" && finjuego==false) {
+    jugadaUsuario = Number(prompt("Elige una casilla:"))
+    while (jugadaUsuario<0 || jugadaUsuario>9) {
+        alert("El numero que has puesto no es correcto. Indica uno entre 0-9")
+        jugadaUsuario = Number(prompt("Elige una casilla:"))
+    }
+    if (buscaminas[jugadaUsuario]!="si") {
+        console.log("No has encontrado la mina!");
+        posicionesDescubiertas[jugadaUsuario]=acierto
+        if ((buscaminas[jugadaUsuario-1]) == "si" || (buscaminas[jugadaUsuario+1]) == "si") {
+            console.log("Hay una mina cerca, cuidado!");
+        } else {
+            console.log("Ninguna mina cerca, vas por buen camino!");
+        }
+    } else {
+        posicionesDescubiertas[jugadaUsuario]=error
+        console.log("BOOM! Perdiste");
+        finjuego=true
+    }
+    console.log(posicionesDescubiertas.join("-"));
+} 
+console.log("Gracias por jugar al Buscaminas lineal!");
+
+
+</script>

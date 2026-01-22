@@ -1,0 +1,82 @@
+<script>
+// 7. Control de Gastos Mensuales
+// Escribe un programa que permita al usuario llevar un control de sus gastos mensuales. 
+// Usa dos arrays: uno para los nombres de los gastos (por ejemplo, "comida", "transporte", etc.) y otro para las cantidades gastadas en cada categoría. 
+// El programa debe mostrar un menú con las siguientes opciones:
+
+// Añadir un nuevo gasto (nombre y cantidad).
+// Ver el total de gastos hasta el momento.
+// Ver los gastos más altos y más bajos del mes.
+// Ver el promedio de gasto diario (suponiendo un mes de 30 días).
+// Salir del programa.
+
+
+let gastos = []
+let importeGastos = []
+let diasMes = 30
+
+let nuevoGasto= ""
+let nuevoImporte = ""
+let totalGastos = 0
+let promedio = 0
+
+let gastoMasAlto=0
+let gastoMasBajo=0
+let nombreGastoMasAlto=""
+let nombreGastoMasBajo=""
+
+
+console.log("1.Añadir un nuevo gasto (nombre y cantidad).\n2.Ver el total de gastos hasta el momento.\n3.Ver los gastos más altos y más bajos del mes.\n4.Ver el promedio de gasto diario (suponiendo un mes de 30 días).\n5.Salir del programa");
+let opciones=Number(prompt("Elige una opcion"))
+    while (opciones<1 || opciones>5) {
+        opciones=Number(prompt("Elige una opcion"))
+    }
+
+while (opciones!=5) {
+    if (opciones==1) {
+    nuevoGasto=prompt("Añade un nuevo gasto")
+    nuevoImporte = Number(prompt("Añade el importe del nuevo gasto"))
+        while (nuevoImporte<=0) {
+            alert("El importe del gasto debe ser mayor que 0")
+            nuevoImporte = Number(prompt("Añade el importe del nuevo gasto"))
+        }
+
+    gastos.push(nuevoGasto)
+    importeGastos.push(nuevoImporte)
+
+} if (opciones==2) {
+    totalGastos=0
+    for (let gasto of importeGastos) {
+        totalGastos+=gasto
+    } console.log(`El total de gastos hasta ahora es ${totalGastos}€`);
+
+} if (opciones==3) {
+    gastoMasAlto=importeGastos[0]
+    gastoMasBajo=importeGastos[0]
+    for (let i = 1; i < importeGastos.length; i++) {
+        if (gastoMasAlto<importeGastos[i]) {
+            gastoMasAlto=importeGastos[i]
+            nombreGastoMasAlto=gastos[i]
+        } if (gastoMasBajo>importeGastos[i]) {
+            gastoMasBajo=importeGastos[i]
+            nombreGastoMasBajo=gastos[i]
+        }
+    }
+    console.log(`El gasto mas alto del mes es ${nombreGastoMasAlto}: ${gastoMasAlto} y el gasto mas bajo es ${nombreGastoMasBajo}: ${gastoMasBajo}`);
+    
+} if (opciones==4) {
+    for (let gasto of importeGastos) {
+        totalGastos+=gasto
+    }
+    promedio=(totalGastos/diasMes)
+    console.log(`El promedio de gasto diario es de ${promedio.toFixed(2)}€ al dia`);
+    
+} 
+opciones=Number(prompt("Elige una opcion"))
+    while (opciones<1 || opciones>5) {
+        opciones=Number(prompt("Elige una opcion"))
+    }
+} console.log("Saliste del programa!");
+
+
+</script>

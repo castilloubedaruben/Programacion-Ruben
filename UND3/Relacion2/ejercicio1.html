@@ -1,0 +1,26 @@
+<script>
+// 1. Generar nombres de usuario
+// Crea una función que reciba un nombre y un apellido y genere un nombre de usuario único. 
+// Usa las tres primeras letras del nombre y del apellido, y agrega tres números aleatorios al final. Investiga el uso de toLowerCase().
+
+// Ejemplo: 
+// Entrada: generarUsuario("Juan", "Pérez");
+// Salida: "juaper123"
+
+//SIN ACABAR
+
+function creacionClaves(nombres,apellidos) {
+    let letrasNombre=nombre.slice(0,3)
+    let letrasApellido=apellido.slice(0,3)
+    let numeroAleatorio=String(Math.floor(Math.random()*10))+String(Math.floor(Math.random()*10))+String(Math.floor(Math.random()*10))
+
+    let claveGenerada=letrasNombre+letrasApellido+numeroAleatorio
+return console.log(claveGenerada);
+}
+let nombre = prompt("Escribe un nombre")
+let apellido = prompt("Escribe un apellido")
+
+console.log(creacionClaves(nombre,apellido));
+
+
+</script>

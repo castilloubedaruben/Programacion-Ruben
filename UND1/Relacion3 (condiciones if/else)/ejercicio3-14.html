@@ -1,0 +1,24 @@
+<script>
+//     14. Estado del clima:
+// Solicita la temperatura actual e imprime:
+// "Muy frío" si es menor a 0°C.
+// "Frío" si es entre 0°C y 15°C.
+// "Templado" si es entre 16°C y 25°C.
+// "Caliente" si es mayor a 25°C.
+
+let temperatura = Number(prompt("Indique una temperatura sin el simbolo º"))
+let muyFrio = temperatura < 0 
+let frio = temperatura <= 15
+let templado = temperatura <= 25
+
+if (muyFrio) {
+    console.log("La temperatura " + temperatura + " es Muy fría")
+} else if (frio) {
+    console.log("La temperatura " + temperatura + " es Fria")
+} else if (templado) {
+    console.log("La temperatura " + temperatura + " es Templada")
+} else {
+    console.log("La temperatura " + temperatura + " es Caliente")
+}
+
+</script>

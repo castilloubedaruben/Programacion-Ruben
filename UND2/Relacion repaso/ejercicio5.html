@@ -1,0 +1,63 @@
+<script>
+    // 5. Gestor de rondas en un juego de dados
+    // Crea un sistema que gestione puntuaciones de varios jugadores mediante arrays.
+    // El menú debe permitir:
+
+    // 1.Añadir jugador.
+    // 2.Registrar ronda (sumar puntos a cada jugador).
+    // 3.Mostrar clasificación.
+    // 4.Mostrar jugadores por encima de la media.
+    // 5.Reiniciar puntuaciones.
+    // 6.Salir.
+
+    let jugadores = ["Ruben", "Reda", "Iker"]
+    let puntuacionesRonda = []
+    let puntuacionesTotalesJugadores = []
+    for (let i = 0; i < jugadores.length; i++) {
+        puntuacionesTotalesJugadores[i] = 0
+    }
+
+    let anadirJugador = ""
+    let puntuacion = 0
+    let contadorRondas = 1
+    let opciones = 0
+    let media =0
+
+    while (opciones != 6) {
+        opciones = prompt("Eligue una opcion!\n1.Añadir jugador.\n2.Jugar ronda.\n3.Mostrar clasificación.\n4.Mostrar jugadores por encima de la media.\n5.Reiniciar puntuaciones.\n6.Salir.")
+
+        if (opciones == 1) {
+            anadirJugador = prompt("Escribe el nombre del jugador")
+            jugadores.push(anadirJugador)
+        } else if (opciones == 2) {
+            puntuacionesRonda = []
+            for (let i = 0; i < jugadores.length; i++) {
+                puntuacion = Math.floor(Math.random() * 12) + 1
+                puntuacionesRonda.push(puntuacion)
+                puntuacionesTotalesJugadores[i] += puntuacion
+                console.log(`Puntos en la ronda ${contadorRondas} de ${jugadores[i]}: ${puntuacionesRonda[i]}`);
+            }
+            contadorRondas++
+        } else if (opciones == 3) {
+            for (let i = 0; i < jugadores.length; i++) {
+                console.log(`Puntos totales de ${jugadores[i]}: ${puntuacionesTotalesJugadores[i]}`);
+            }
+        } else if (opciones == 4) {
+            for (const puntuacion of puntuacionesTotalesJugadores) {
+                media = puntuacion/contadorRondas
+            } c
+            
+
+        } else if (opciones == 5) {
+            puntuacionesTotalesJugadores = []
+            for (let i = 0; i < jugadores.length; i++) {
+                puntuacionesTotalesJugadores[i] = 0
+            }
+        } else {
+            console.log("Saliste del programa! Gracias por participar!");
+            
+        }
+    }
+
+
+</script>

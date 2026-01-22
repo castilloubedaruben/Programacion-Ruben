@@ -1,0 +1,21 @@
+<script>
+//12. Identificar el tipo de triángulo:
+//Pide al usuario las longitudes de los tres lados de un triángulo e indica si es equilátero, isósceles o escaleno.
+
+let lado1 = Number(prompt("Indique el primer lado de un triangulo en cm"))
+let lado2 = Number(prompt("Indique el segundo lado de un triangulo en cm"))
+let lado3 = Number(prompt("Indique el tercero lado de un triangulo en cm"))
+
+let equilatero = lado1 && lado2 == lado3
+let isosceles = (lado1 == lado2 || lado2 == lado3 || lado1 == lado3)
+
+
+if (equilatero) {
+    console.log("Es un triangulo equilatero todos lados iguales")
+} else if (isosceles) {
+    console.log("Es un triangulo isosceles solo dos lados iguales") 
+} else {
+    console.log("Es un triangulo escaleno todos lados diferentes")
+}
+
+</script>

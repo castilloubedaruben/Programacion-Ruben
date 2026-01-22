@@ -1,0 +1,39 @@
+<script>
+
+
+function repartirTareas(nombres, tareas) {
+
+    let tareasAsignadas = []
+
+    // Inicializo la lista de cada persona con su nombre y un array vacío
+    for (let i = 0; i < nombres.length; i++) {
+        tareasAsignadas.push([nombres[i], []]);
+    }
+
+    for (let i = 0; i < tareas.length; i++) {
+        let indicePersona = Math.floor(Math.random() * nombres.length);
+        tareasAsignadas[indicePersona][1].push(tareas[i]);
+    }
+    return tareasAsignadas;
+}
+
+// ============================= MAIN ============================= //
+
+let personasRepartirTareas = ["Laura", "Ruben", "Luis", "María"];
+let tareasARepartir = [
+    "Lavar platos",
+    "Limpiar baño",
+    "Hacer compras",
+    "Barrer",
+    "Cortar césped",
+    "Cocinar",
+    "Organizar estantes",
+    "Limpiar ventanas",
+    "Poner la mesa",
+    "Recoger ropa"
+];
+
+let resultado = repartirTareas(personasRepartirTareas, tareasARepartir);
+console.log(resultado);
+
+</script>

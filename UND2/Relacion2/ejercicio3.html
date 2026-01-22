@@ -1,0 +1,55 @@
+<script>
+    // 3. Sistema de Compras en Almacén
+
+    // Desarrolla un programa que gestione las compras en un almacén. Para esto:
+
+    // 1.Crea un array que contenga los nombres de 10 productos disponibles en el almacén.
+    // 2.Crea otro array que contenga los precios correspondientes a esos 10 productos.
+    // 3.El programa debe permitir al usuario realizar una compra solicitando el nombre del producto y la cantidad deseada.
+    // 4.El programa debe buscar el precio del producto seleccionado, multiplicarlo por la cantidad y añadirlo al total de la compra.
+    // 5.Si el usuario escribe "FIN", el programa debe finalizar la compra, mostrando un resumen con todos los productos adquiridos, sus cantidades, y el costo total a pagar.
+
+    let productos = [
+        "teclado",
+        "raton",
+        "alfombrillas",
+        "cascos",
+        "auriculares",
+        "pantallas",
+        "portatiles",
+        "torres",
+        "cables",
+        "RAM",
+    ];
+    let precios = [30, 35, 15, 50, 40, 100, 500, 150, 10, 60];
+    let productosComprados = []
+    let unidadesProductosComprados = []
+
+    let compraCorrecta = false;
+
+    let comprarProducto = ""
+    let cantidadComprar = 0
+    let totalCestaCompra=0
+
+    while (comprarProducto != "fin".toLowerCase) {
+        comprarProducto = String(prompt("Elige el articulo que quiere comprar")).toLowerCase
+
+        for (let i = 0; i < productos.length && compraCorrecta==false; i++) {
+            if (comprarProducto == productos[i]) {
+                cantidadComprar = Number(prompt("Elige la cantidad que quieres comprar"));
+                    while (cantidadComprar<=0) {
+                        alert("Introduce una cantidad mayor de 0.")
+                        cantidadComprar = Number(prompt("Elige la cantidad que quieres comprar"))
+                    }
+                productosComprados.push(comprarProducto)
+                unidadesProductosComprados.push(cantidadComprar)
+                compraCorrecta=true
+                totalCestaCompra = cantidadComprar * precios[i];
+            }
+        }
+        compraCorrecta=false
+    }
+    console.log(`Has comprado ${productosComprados}\nHas comprado las siguientes unidades ${unidadesProductosComprados}\nEl importe es de ${totalCestaCompra}€`);
+    
+    
+</script>

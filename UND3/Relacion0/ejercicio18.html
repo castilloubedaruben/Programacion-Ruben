@@ -1,0 +1,21 @@
+<script>
+//     18. Contar vocales en una cadena
+// Crea una función llamada contarVocalesEnCadena que reciba una cadena de texto 
+// y devuelva la cantidad total de vocales que contiene.
+
+function contarVocalesEnCadena(texto) {
+    texto=texto.toLowerCase()
+    let cantidadTotalVocales = 0
+    for (const letra of texto) {
+        if (letra=="a"||letra=="e"||letra=="i"||letra=="o"||letra=="u") {
+            cantidadTotalVocales++
+        }
+    }
+
+    return cantidadTotalVocales
+}
+
+const CADENATEXTO = "El betis es el MEJOR equipo de SevillA"
+console.log(contarVocalesEnCadena(CADENATEXTO))
+
+</script>

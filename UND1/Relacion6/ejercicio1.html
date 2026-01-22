@@ -1,0 +1,55 @@
+<script>
+  // 1. Calificaciones de estudiantes
+  // Crea un programa que reciba las calificaciones de N estudiantes (se piden calificaciones hasta que el usuario introduzca un "-1") y calcule el promedio.
+  // Luego muestra cuántos estudiantes están aprobados (>=5) y cuántos suspensos.
+
+  // Ejemplo:
+
+  // Introduce la calificacion del alumno 1: 4
+  // Introduce la calificacion del alumno 2: 1
+  // Introduce la calificacion del alumno 3: 10
+  // Introduce la calificacion del alumno 4: 8
+  // Introduce la calificacion del alumno 5: -1
+
+  // Hay 2 alumnos aprobados y 2 alumnos suspensos.
+  // La calificación media es 5.75
+
+    let numeroAlumno = 1
+    let nota = Number(prompt("Introduce la calificacion del alumno " + numeroAlumno))
+    let sumatorio = 0
+    let alumnosAprobados = 0
+    let alumnosSuspensos = 0
+    let promedio = 0
+
+    // Mi programa pide notas hasta que el usuario introduzca "-1"
+    while (nota != -1) {
+
+        //Manejo de errores: Mi programa no continua hasta que la calificaicon
+        //esté en el intervalo [0-10]
+        while (nota < 0 || nota > 10) {
+            nota = Number(prompt("Calificacion Incorrecta. Introduce la calificacion del alumno " + numeroAlumno))
+        }
+        //Actualizo la suma total y el numero de alumnos
+        sumatorio += nota
+        numeroAlumno++
+
+        // Contablizo los alumnos aprobados y suspensos
+        if (nota >= 5) {
+            alumnosAprobados++
+        } else {
+            alumnosSuspensos++
+        }
+
+        // Pido la siguiente calificaion
+        nota = Number(prompt("Introduce la calificacion del alumno " + numeroAlumno))
+
+    }
+
+    // Calculo el promedio
+    promedio = sumatorio / (numeroAlumno - 1)
+
+    // Muestro el resultados al usuario
+    console.log("Hay " + alumnosAprobados + " alumnos aprobados y " +
+        alumnosSuspensos + " alumnos suspensos");
+
+    console.log("La calificación media es " + promedio);

@@ -1,0 +1,10 @@
+<script>
+    //7. Cálculo del Índice de Masa Corporal (IMC)
+    //Pide al usuario su peso y altura, y calcula su Índice de Masa Corporal (IMC) (fórmula: IMC = peso/altura^2).
+
+    let pesoUsuario = Number(prompt("Indique su peso en kg"))
+    let alturaUsuario = Number(prompt("Indique su altura en cm"))
+    let imc = ((pesoUsuario / alturaUsuario) ** 2) * 100
+
+    console.log("Su IMC es " + imc)
+</script>

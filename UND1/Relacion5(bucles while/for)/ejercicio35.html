@@ -1,0 +1,25 @@
+<script>
+  // 35.-
+  // Solicitar un número entero.
+  // Calcular si el número introducido es primo o no, y si no lo es, calcular el siguiente número primo.
+
+  let numeroUsuario = Number(prompt("Indica un numero"));
+  let contador = 2;
+  let esPrimo = false
+
+  while (!esPrimo) { // esPrimo==false
+
+    contador = 2
+    while (numeroUsuario % contador != 0) {
+      contador++;
+    }
+    if (numeroUsuario == contador) {
+      console.log(numeroUsuario + " es primo");
+      esPrimo = true
+    } else {
+      console.log(numeroUsuario + " no es primo");
+      numeroUsuario++
+    }
+    console.log("fin del bucle interno");
+  }
+</script>

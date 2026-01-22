@@ -1,0 +1,15 @@
+<script>
+// 8. Intercambio de elementos del array
+// Crea un array con los números [100, 200, 300].
+// Usa una variable temporal para intercambiar los valores del primer y tercer elemento, e imprime el array después del cambio.
+
+let numeros=[100,200,300]
+let numeroRobado=numeros.pop()
+let numeroRobado2=numeros.shift()
+
+numeros.push(numeroRobado2)
+numeros.unshift(numeroRobado)
+
+console.log(numeros);
+
+</script>

@@ -1,0 +1,27 @@
+<script>
+// 39.-
+// Solicitar un número entero. Solicitar otro número por pantalla hasta que este se corresponda con el primer número introducido.
+// Indicar si el número buscado es mayor o menor que el introducido.
+
+  let numeroUsuario1 = Number(prompt("Escribe un numero entero"));
+  let numeroUsuario2 = Number(prompt("Escribe otro numero"));
+
+  if (numeroUsuario1 == numeroUsuario2) {
+    console.log("Has salido del programa al escribir el mismo numero");
+  } else {
+    while (numeroUsuario1 != numeroUsuario2) {
+      if (numeroUsuario2 < numeroUsuario1) {
+        numeroUsuario2 = ""
+        console.log("El segundo numero es menor que el primero")
+        numeroUsuario2 = prompt("Vuelve a escribir otro numero");
+      } else {
+        numeroUsuario2 = ""
+        console.log("El segundo numero es mayor que el primero")
+        numeroUsuario2 = prompt("Vuelve a escribir otro numero");
+      }
+    }
+  }
+  console.log("Has salido del programa al escribir el mismo numero");
+</script>
+
+</script>    

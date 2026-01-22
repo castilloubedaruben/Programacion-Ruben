@@ -1,0 +1,24 @@
+<script>
+// 15. Filtrar números mayores a un valor
+// Crea una función llamada filtrarNumerosMayores que reciba un array de números y un valor,
+// y devuelva un nuevo array con los números mayores que el valor dado.
+
+function filtrarNumerosMayores(arrayNumeros,valor) {
+
+    let arrayNumerosMayores = []
+    
+    for (let i = 0; i < arrayNumeros.length; i++) {
+        if (arrayNumeros[i]>valor) {
+            arrayNumerosMayores.push(arrayNumeros[i])
+        }
+    }
+    return arrayNumerosMayores
+}
+
+let arrayNuevoMayores = [29,3,9,12,1,6,90]
+let valorUsuario = 10
+
+console.log(filtrarNumerosMayores(arrayNuevoMayores,valorUsuario));
+
+
+</script>

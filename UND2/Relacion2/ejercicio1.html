@@ -1,0 +1,72 @@
+<script>
+    // 1. Registro de Temperatura Diaria
+
+    // Escribe un programa que permita al usuario ingresar las temperaturas registradas durante una semana (7 días).
+    // Una vez ingresadas las temperaturas, el programa debe mostrar al usuario un menú con las siguientes opciones:
+    //     1.Mostrar la temperatura más alta registrada.
+    //     2.Mostrar la temperatura más baja registrada.
+    //     3.Calcular la temperatura promedio de la semana.
+    //     4.Salir del programa.
+
+    // El programa debe ejecutarse hasta que el usuario elija la opción de salir.
+
+    const LONGITUDTEMPERATURAS = 7
+    let temperaturas = []
+    let temperaturaUsuario = ""
+    let opcionElegida = ""
+    let temperaturaMaxima = 0
+    let temperaturaMinima = 0
+    let temperaturaTotal = 0
+    let temperaturaMedia = 0
+
+    for (let i = 0; i < LONGITUDTEMPERATURAS; i++) {
+        temperaturaUsuario = Number(prompt("Introduce la temperatura:"));
+            while (temperaturaUsuario<=-273 || temperaturaUsuario>=100) {
+                temperaturaUsuario = Number(prompt("Introduce la temperatura:"))
+            }
+        temperaturas.push(temperaturaUsuario)
+        console.log(temperaturas);
+
+        if (i == 0) {
+            temperaturaMaxima = temperaturaUsuario
+            temperaturaMinima = temperaturaUsuario
+        } if (temperaturaMaxima < temperaturaUsuario) {
+            temperaturaMaxima = temperaturaUsuario
+        } if (temperaturaMinima > temperaturaUsuario) {
+            temperaturaMinima = temperaturaUsuario
+        }
+
+        temperaturaTotal += temperaturaUsuario
+
+    }
+    temperaturaMedia = (temperaturaTotal / LONGITUDTEMPERATURAS).toFixed(2)
+
+    console.log("1.Mostrar la temperatura más alta registrada.");
+    console.log("2.Mostrar la temperatura más baja registrada.");
+    console.log("3.Calcular la temperatura promedio de la semana.");
+    console.log("4.Salir del programa.");
+
+    opcionElegida = -1
+
+    while (opcionElegida != 4) {
+        opcionElegida = Number(prompt("Indique la opción que desea saber (1-2-3-4)"))
+            while (opcionElegida<1 || opcionElegida>4) {
+                opcionElegida = Number(prompt("Indique la opción que desea saber (1-2-3-4)"))
+            }
+
+        if (opcionElegida == 1) {
+            console.log(`La temperatura maxima registrada es ${temperaturaMaxima}`);
+
+        } else if (opcionElegida == 2) {
+            console.log(`La temperatura minima registrada es ${temperaturaMinima}`)
+
+        } else if (opcionElegida == 3) {
+            console.log(`La temperatura media de la semana es ${temperaturaMedia}`)
+        }
+    }
+    console.log("Salir del programa.");
+
+
+
+
+</script>

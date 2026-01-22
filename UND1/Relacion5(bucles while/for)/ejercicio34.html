@@ -1,0 +1,17 @@
+<script>
+  // 34.-
+  // Solicitar un número entero. Calcular si el número es primo o no.
+  // Esto significa que no tenga ningún divisor aparte de sí mismo y el 1.
+
+  let numeroUsuario = Number(prompt("Indica un numero"));
+  let contador = 2;
+
+  while (numeroUsuario % contador != 0) {
+    contador++;
+  }
+  if (numeroUsuario == contador) {
+    console.log(numeroUsuario + " es primo");
+  } else {
+    console.log(numeroUsuario + " no es primo");
+  }
+</script>

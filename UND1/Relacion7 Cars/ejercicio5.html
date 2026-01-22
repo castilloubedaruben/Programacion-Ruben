@@ -1,0 +1,51 @@
+<script>
+// 5. ¡Luigi cuenta neumáticos!
+// Luigi tiene una tienda de neumáticos. Cada cliente pide un número de ruedas (entre 1 y 4). El programa continúa hasta que se introduzca un 0. Al final:
+
+// Muestra cuántos neumáticos se vendieron en total
+// Cuántos clientes atendió
+// Cuántos pidieron 4 neumáticos (cambio completo)
+// Usa while y condiciones para contar.
+
+// 🧪 Ejemplo:
+// Cliente 1: 2 neumáticos
+// Cliente 2: 4 neumáticos
+// Cliente 3: 1 neumático
+// Cliente 4: 4 neumáticos
+// Cliente 5: 0
+
+// Total de clientes: 4
+// Neumáticos vendidos: 11
+// Clientes con cambio completo: 2
+
+
+let numeroNeumaticos = 1
+let clientesCambioCompleto = 0
+let totalClientes = 0
+let contador = 1
+let cambioCompleto=4
+let totalNeumaticos =0
+
+while (numeroNeumaticos!=0) {
+    numeroNeumaticos=Number(prompt("Cuantos neumaticos quieres cambiar"))
+
+    while (numeroNeumaticos<0 || numeroNeumaticos>4) {
+        console.log("El numero de neumaticos debe estar entre 0 y 4")
+        numeroNeumaticos=Number(prompt("Cuantos neumaticos quieres cambiar"))
+    }
+    if (numeroNeumaticos==cambioCompleto) {
+        clientesCambioCompleto++
+
+    } if (numeroNeumaticos!=0) {
+        totalClientes++
+    }
+    console.log("Cliente " + contador + ": " + numeroNeumaticos + " neumaticos");
+    contador++
+    
+    totalNeumaticos+=numeroNeumaticos
+}   
+    console.log("Total de clientes: " + totalClientes)
+    console.log("Neumáticos vendidos: " + totalNeumaticos)
+    console.log("Clientes con cambio completo: " + clientesCambioCompleto)
+
+</script>

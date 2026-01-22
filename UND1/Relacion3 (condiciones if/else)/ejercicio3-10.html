@@ -1,0 +1,33 @@
+<script>
+    //10. calificacion de un examen:
+    //Pide al usuario su calificacion (entre 0 y 100) y devuelve su letra correspondiente:
+    //A (90-100).
+    //B (80-89).
+    //C (70-79).
+    //D (60-69).
+    //F (0-59).
+
+    let calificacion = Number(prompt("Indique su calificacion entre 0 y 100"))
+    let calificacionA = (calificacion >= 90) && (calificacion <= 100)
+    let calificacionB = (calificacion >= 80) && (calificacion <= 89)
+    let calificacionC = (calificacion >= 70) && (calificacion <= 79)
+    let calificacionD = (calificacion >= 60) && (calificacion <= 69)
+    let calificacionF = (calificacion >= 0) && (calificacion <= 59)
+
+    if (calificacionA) {
+        console.log("Su calificacion es de A")
+    } else if (calificacionB) {
+        console.log("Su calificacion es de B")
+    } else if (calificacionC) {
+        console.log("Su calificacion es de c")
+    } else if (calificacionD) {
+        console.log("Su calificacion es de D")
+    } else if (calificacionF) {
+        console.log("Su calificacion es de F")
+    } else
+        console.log("Indique una calificacion valida")
+
+
+
+
+</script>

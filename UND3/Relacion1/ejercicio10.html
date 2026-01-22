@@ -1,0 +1,21 @@
+<script>
+// 10. Simular una Carta de una Baraja
+// Escribe una función cartaAleatoria que devuelva una carta aleatoria de una baraja (con un número del 1 al 13, que representaría el valor,
+// y uno de los cuatro palos: corazones, diamantes, tréboles o picas).
+
+function cartaAleatoria() {
+    let palosBaraja = ["corazones","diamantes","treboles","picas"]
+    let carta =[]
+
+    let numeroRandom = Math.floor(Math.random() * 13)+1
+    carta.push(numeroRandom)
+    let numeroAleatorioPalos = Math.floor(Math.random() * palosBaraja.length)
+    carta.push(palosBaraja[numeroAleatorioPalos])
+    
+    return carta
+}
+let cartaAleatoriaUsuario = cartaAleatoria()
+
+console.log(cartaAleatoriaUsuario);
+
+</script>

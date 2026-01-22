@@ -1,0 +1,27 @@
+<script>
+
+// 16. Calculadora de impuestos progresivos:
+// Pide al usuario su salario anual e imprime el impuesto a pagar según estos tramos:
+// Menos de 10.000€: 0% de impuestos.
+// De 10.000€ a 20.000€: 10%.
+// De 20.000€ a 40.000€: 20%.
+// Más de 40.000€: 30%.
+
+    let salario = Number(prompt("Indique su salario anual:"))
+    let tramo1 = salario * 0.10
+    let tramo2 = salario * 0.20
+    let tramo3 = salario * 0.30
+
+    if (salario > 0 && salario < 10000) {
+        console.log("No se le aplica impuestos en ese rango de salario")
+    } else if (salario >= 10000 && salario < 20000) {
+        console.log("Los impuestos a pagar son " + tramo1)
+    } else if (salario >= 20000 && salario < 40000) {
+        console.log("Los impuestos a pagar son " + tramo2)
+    } else if (salario >= 40000) {
+        console.log("Los impuestos a pagar son " + tramo3)
+    } else {
+        console.log("Indique un salario correcto")
+    }
+
+</script>

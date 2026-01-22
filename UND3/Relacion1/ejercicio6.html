@@ -1,0 +1,13 @@
+<script>
+// 6. Simular el Lanzamiento de un Dado con un Número de Caras Definido por el Usuario
+// Escribe una función lanzarDadoPersonalizado que reciba un número caras y devuelva un número aleatorio entre 1 y caras. 
+// Esto debe funcionar para dados con diferente número de caras, por ejemplo, un dado de 20 caras.
+
+function lanzarDadoPersonalizado(maxCaras) {
+    let numeroAleatorio = Math.floor(Math.random() * maxCaras)+1
+    return numeroAleatorio
+}
+let carasDado=12
+console.log(lanzarDadoPersonalizado(carasDado));
+
+</script>

@@ -1,0 +1,17 @@
+<script>
+  //     36.-
+  // Solicitar palabras por pantalla hasta que la palabra introducida sea SALIR.
+
+  let palabraUsuario = String(prompt("Escribe una palabra"));
+  const SALIR = "SALIR";
+
+  if (palabraUsuario == SALIR) {
+    console.log("Has salido del programa al escribir SALIR");
+  } else {
+    while (palabraUsuario != SALIR) {
+      palabraUsuario = "";
+      palabraUsuario = prompt("Escribe una nueva palabra");
+    }
+  }
+  console.log("Has salido del programa al escribir SALIR");
+</script>

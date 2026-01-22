@@ -1,0 +1,17 @@
+<script>
+// 10. Simulación de una pila (LIFO=Last-In First-Out)
+// Crea un array vacío llamado pila.
+// Añade los números 10, 20 y 30 al final de la pila.
+// Simula el proceso de extraer elementos de la pila eliminando el último elemento e imprime el número extraído y el estado de la pila.
+
+let pila = []
+pila.push(10,20,30)
+let pilaTamanio = pila.length
+let numeroEliminado = 0
+
+for (let i = 0; i < pilaTamanio; i++) {
+    numeroEliminado=pila.pop()
+    console.log(`EL numero borrado es ${numeroEliminado} y quedan ${pila}`);
+}
+
+</script>

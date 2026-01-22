@@ -1,0 +1,53 @@
+<script>
+//Ejercicio 1: Declaración e inicialización
+//Declara con let dos variables numéricas: una entera y otra decimal.
+let numeroEntero = 10
+let numeroDecimal = 5.5
+//Declara con const una cadena de texto con un saludo.
+const saludo = "Hola, Ruben"
+//Muestra en consola los valores de las tres variables en una sola línea mediante concatenación con +.
+console.log("Número Entero: " + numeroEntero + " Numero Decimal:" + numeroDecimal + " Saludo: " + saludo)
+
+//Ejercicio 2: Entrada con prompt() y conversión
+//Pide al usuario dos valores con prompt(). Guárdalos en texto1 y texto2 (sin convertir).
+//Muestra en consola el resultado de la “suma” texto1 + texto2 (concatenación).
+//Convierte ambos a número (elige parseInt, parseFloat o Number) y guarda en numero1 y numero2.
+//Muestra en consola la suma numérica real de numero1 + numero2.
+
+let texto1 = prompt("Elige un numero")
+let texto2 = prompt("Elige un numero")
+console.log(texto1 + "y" + texto2)
+let numero1 = Number(texto1)
+let numero2 = Number(texto2)
+let suma = numero1 + numero2
+console.log(suma)
+
+//## Ejercicio 3: Cadenas de texto
+//1. Declara una cadena con un saludo (por ejemplo, `"Hola, "` ) y otra con un nombre (por ejemplo, `"Ana"`).
+//2. **Concatena** ambas con `+` y muéstralo.
+//3. Usa `indexOf()` para buscar la posición de la letra `"a"` (minúscula) en el nombre y muéstrala.
+//4. Usa `charAt()` para mostrar el **primer carácter** del nombre.
+
+//> *Nota:* Solo usa las operaciones indicadas en los apuntes: concatenación, `indexOf()` y `charAt()`.
+
+
+let mensaje = "Hola, "
+let nombre = "Ana"
+console.log(mensaje + nombre)
+
+let posicion = nombre.indexOf("a")
+console.log("La letra a está en la posicion " + posicion + " en la variable nombre.")
+
+console.log("Primer caracter del nombre " + nombre + " es " + nombre.charAt(0))
+
+//## Ejercicio 4: `null` y `undefined`
+//1. Declara `let valorNulo = null`.
+//2. Declara `let valorNoDefinido;` (sin asignar).
+//3. Muestra en consola un mensaje indicando el valor actual de cada una.
+//4. (Opcional) Declara `const etiqueta = "Comprobación de valores:"` y muéstrala antes de los valores.
+
+let valorNulo = null
+let valorNoDefinido
+
+
+</script>

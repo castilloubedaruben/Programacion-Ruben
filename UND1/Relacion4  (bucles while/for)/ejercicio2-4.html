@@ -1,0 +1,20 @@
+<script>
+
+// 🔹 Ejercicio 2 – Bucle while
+// Escribe un programa que pida al usuario un número secreto (entre 1 y 10).
+// Después, el programa debe pedir al jugador que adivine el número hasta que lo consiga, mostrando un mensaje de “Intenta de nuevo” cuando falle.
+// Cuando acierte, debe mostrar:
+
+// ¡Correcto! Has adivinado el número.
+
+let numeroSecreto = Number(prompt("Indique un numero secreto entre 1 y 10"))
+let intento = Number(prompt("Inserte un numero del 1 al 10 para adivinar la contraseña secreta"))
+
+while (numeroSecreto != intento) {
+    console.log("Intentelo de nuevo")
+    intento = Number(prompt("Inserte un numero"))
+} 
+console.log("Correcto! Has adivinado el numero: " + numeroSecreto)
+
+
+</script>

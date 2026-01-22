@@ -1,0 +1,54 @@
+<script>
+
+// 3. Entrenamiento en el circuito de Radiador Springs
+// Crea un programa que simule un entrenamiento de 5 vueltas para un coche. 
+// En cada vuelta, se pide el tiempo (en segundos). No pueden introducirte valores negativos. Al final, muestra:
+
+// La vuelta más rápida
+// El tiempo total
+// El tiempo promedio
+
+// 🧪 Ejemplo:
+// Tiempo vuelta 1: 60
+// Tiempo vuelta 2: 58
+// Tiempo vuelta 3: 62
+// Tiempo vuelta 4: 57
+// Tiempo vuelta 5: 59
+
+// Tiempo total: 296
+// Tiempo medio: 59.2
+// La vuelta más rápida fue la 4 con 57 segundos.
+
+let vueltaMaxima = 5
+let tiempoVuelta = 0
+let tiempoTotal = 0
+let tiempoPromedio = 0
+let vueltaRapida = 99999
+let nuemroVuelta = 0
+
+
+for (let i = 1; i <= vueltaMaxima; i++) {
+    tiempoVuelta=Number(prompt("Indique tiempo de la vuelta en segundos"))
+    
+    
+    while (tiempoVuelta<0) {
+        console.log("El tiempo de la vuelta tiene que ser un numero positivo");
+        tiempoVuelta=Number(prompt("Indique tiempo de la vuelta en segundos"))
+    } 
+    console.log("Tiempo vuelta " + i + ": " + tiempoVuelta);
+    tiempoTotal+=tiempoVuelta
+
+        if (tiempoVuelta<vueltaRapida) {
+            vueltaRapida=tiempoVuelta
+            nuemroVuelta = i
+        }
+    } 
+
+tiempoPromedio=tiempoTotal/vueltaMaxima
+console.log("Tiempo total: "+ tiempoTotal);
+console.log("Tiempo medio: "+ tiempoPromedio);
+console.log("La vuelta más rápida fue la " + vueltaRapida + " segundos");
+
+
+
+</script>

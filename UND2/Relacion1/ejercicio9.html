@@ -1,0 +1,20 @@
+<script>
+// 9. Simulación de una cola (FIFO=First In First Out)
+// Crea un array vacío llamado cola.
+// Añade los elementos "cliente1", "cliente2" y "cliente3" al final del array.
+// Simula el proceso de atender a los clientes eliminando el primero e imprime el cliente atendido y el estado de la cola.
+
+let cola=[]
+cola.push("cliente1","cliente2","cliente3")
+let clientesTotales=cola.length
+let clientesAtendido=0
+
+for (let i = 0; i < clientesTotales; i++) {
+    clienteAtendido=cola.shift();
+    console.log(`EL cliente atendido es ${clienteAtendido} y quedan ${cola}`);
+    
+}
+
+
+
+</script>

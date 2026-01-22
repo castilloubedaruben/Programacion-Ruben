@@ -1,0 +1,60 @@
+<script>
+    // 2. Sistema de Puntuación de un Videojuego
+
+    // Escribe un programa que gestione las puntuaciones de los jugadores en un videojuego utilizando dos arrays: uno para los nombres de los jugadores y otro para sus respectivas puntuaciones.
+    // El programa debe funcionar de la siguiente manera:
+
+    // Crea dos arrays:
+    // Uno para almacenar los nombres de los últimos 5 jugadores.
+    // Otro para almacenar las puntuaciones correspondientes de esos jugadores.
+
+    // El programa debe mostrar un menú con las siguientes opciones:
+    // Añadir un nuevo jugador y su puntuación: El usuario debe poder ingresar el nombre del jugador y su puntuación. 
+    // La información del jugador más antiguo (el primer elemento de ambos arrays) debe ser eliminada y los nuevos datos deben añadirse al final de ambos arrays.
+    // Mostrar los jugadores y sus puntuaciones actuales: Se deben mostrar los nombres de los jugadores junto con sus respectivas puntuaciones.
+    // Salir del programa: Terminar la ejecución del programa.
+
+    let jugadores = []
+    let tamanoJugadores = 5
+    let puntuaciones = []
+    let tamanoPuntuaciones = 5
+
+    let anadirJugador = ""
+    let anadirPuntuacion = 0
+    let elegirOpcion = 0
+
+    elegirOpcion = -1
+
+    while (elegirOpcion != 3) {
+        console.log("Elige una opcion:\n1.Añadir un nuevo jugador y su puntuación\n2.Mostrar los jugadores y sus puntuaciones actuales\n3.Salir del programa");
+        elegirOpcion = Number(prompt("Elige una opcion:"))
+            while (elegirOpcion<=0 || elegirOpcion >=4) {
+                alert("Opcion incorrecta")
+                elegirOpcion = Number(prompt("Elige una opcion:"))
+            }
+        if (elegirOpcion == 1) {
+            if (tamanoJugadores==jugadores.length && tamanoPuntuaciones==puntuaciones.length) {
+                jugadores.shift()
+                puntuaciones.shift()
+            }
+            anadirJugador = String(prompt("Añade un nuevo jugador"))
+            anadirPuntuacion = Number(prompt("Añade una puntuacion"))
+                while (anadirPuntuacion<0) {
+                    alert("La puntuacion debe ser un numero positivo!")
+                    anadirPuntuacion = Number(prompt("Añade una puntuacion"))
+                }
+            jugadores.push(anadirJugador)
+            puntuaciones.push(anadirPuntuacion)
+            
+        } else if (elegirOpcion == 2) {
+            console.log(jugadores);
+            console.log(puntuaciones);
+        }
+    } 
+    console.log("Salir del programa");
+    
+
+
+
+
+</script>

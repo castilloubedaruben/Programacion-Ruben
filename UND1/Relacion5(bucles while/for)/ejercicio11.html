@@ -1,0 +1,18 @@
+<script>
+
+// 11.-
+// Solicitar dos números enteros. Mostrar por pantalla todos los números desde el segundo número introducido hasta el primer número introducido.
+// Comprueba primero que el primero es menor que el segundo
+
+let primerNumero = Number(prompt("Indica un primer numero"))
+let segundoNumero = Number(prompt("Indica un segundo numero"))
+
+if (primerNumero <= segundoNumero) {
+    for ( let i = segundoNumero; i >= primerNumero; i--) {
+        console.log(i)
+    }
+} else {
+    console.log("el segundo numero no puede ser menor que el pimero")
+}
+
+</script>

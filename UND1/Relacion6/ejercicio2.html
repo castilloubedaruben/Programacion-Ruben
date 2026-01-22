@@ -1,0 +1,40 @@
+<script>
+
+    // 2. Simulador de cajero automático
+    // Crea un programa que simule un cajero. 
+    // El usuario tiene un saldo inicial de 1000 euros y el cajero permite al usuario retirar dinero mientras su saldo no se quede por debajo de cero.
+
+    // Ejemplo:
+
+    // Saldo: 1000 | Introduzca saldo a retirar: 400
+    // Saldo: 600 | Introduzca saldo a retirar: 200
+    // Saldo: 400 | Introduzca saldo a retirar: 500
+    // Saldo insuficiente.
+    // Saldo: 400 | Introduzca saldo a retirar: 400
+    // Te has quedado sin saldo ¡A trabajar!
+
+    let saldoTotal = 1000
+    let retirarSaldo = 0
+
+
+    while (saldoTotal > 0) {
+        retirarSaldo = Number(prompt("Introduce saldo a retirar: "))
+        console.log("Saldo: " + saldoTotal + " | " + "Introduce saldo a retirar: " + retirarSaldo)
+
+        if (retirarSaldo <= 0) {
+            console.log("No puedes sacar dinero negativo")
+        } else {
+                if (saldoTotal < retirarSaldo) {
+                console.log("Saldo insuficiente.")
+
+            } else {
+                saldoTotal = saldoTotal - retirarSaldo
+            }
+        }
+            
+    } console.log("Te has quedado sin saldo ¡A trabajar!")
+
+
+
+
+</script>

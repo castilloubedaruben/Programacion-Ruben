@@ -1,0 +1,27 @@
+<script>
+  // 21.-
+
+  // Solicitar un número entero. Dibujar una pirámide con tantas filas como indique el número.
+  // Ejemplo:
+  //     *
+  //    **
+  //   ***
+  //  ****
+  // *****
+
+  let numeroUsuario = Number(prompt("indica un número"));
+  let piramide = ""
+  let espacios = ""
+  let asteriscos = ""
+
+  for (let i = 0; i <= numeroUsuario; i++) {
+    asteriscos+= "*";
+    espacios = "" // resetea los espacios para cada vuelta
+    for (let j = 0; j < numeroUsuario - (i+1); j++) {
+      espacios+= " "
+    }
+    piramide = espacios + asteriscos;
+    console.log(piramide)
+  }
+  console.log("Sale del bucle");
+</script>

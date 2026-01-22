@@ -1,0 +1,15 @@
+<script>
+    // 5. Calcular el factorial de un número
+    // Haz una función llamada factorial que reciba un número y devuelva su factorial calculado de forma iterativa.
+
+    function factorial(numero) {
+        let resultado = 1
+        for (let i = 1; i <= numero; i++) {
+            resultado = resultado * i;
+        }
+        return resultado
+    }
+    let numeroUsuario = Number(prompt("Indica un numero"))
+    console.log(factorial(numeroUsuario));
+
+</script>

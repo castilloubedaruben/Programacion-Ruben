@@ -1,0 +1,50 @@
+<script>
+    // 6. Sistema de Seguimiento de Tareas
+    // Desarrolla un programa que permita hacer un seguimiento de las tareas diarias de un equipo. 
+    // El programa debe usar dos arrays: uno para almacenar los nombres de las tareas y otro para almacenar el estado de cada tarea (true = completada y false = pendiente). 
+    // El menú del programa debe ofrecer las siguientes opciones:
+
+    // Añadir una nueva tarea.
+    // Marcar una tarea como completada.
+    // Ver la lista de tareas pendientes.
+    // Ver la lista de tareas completadas.
+    // Salir del programa.
+
+    let tareas = []
+    let estadoTareas = []
+    let nuevaTarea = ""
+    let estadoNuevaTarea = ""
+    let modificarTarea=""
+    let completada = true
+    let pendiente = false
+    
+// Sin acabar, hacerlo para el examen
+
+    let opcion = prompt("Elige una opcion")
+
+    while (opcion != 5) {
+        if (opcion == 1) {
+            nuevaTarea = prompt("Añade una tarea")
+            estadoNuevaTarea = prompt("Añade el estado de la tarea: completada o pendiente")
+            tareas.push(nuevaTarea)
+            estadoTareas.push(estadoNuevaTarea)
+            console.log(tareas);
+            console.log(estadoTareas);
+            
+        } else if (opcion==2) {
+            modificarTarea=prompt("¿Que tarea desea marcar como completada?")
+            for (let i = 0; i < tareas.length; i++) {
+                if (modificarTarea==tareas[i]) {
+                    estadoTareas[i]==completada
+                }
+            }
+            console.log(tareas);
+            console.log(estadoTareas);
+            
+        }
+        opcion = prompt("Elige una opcion")
+    }
+
+
+
+</script>

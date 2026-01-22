@@ -1,0 +1,67 @@
+<script>
+// 🚦 Ejercicio: “La gasolinera de Fillmore”
+
+// Fillmore tiene una gasolinera ecológica en Radiador Springs.
+// Cada coche que llega reposta una cantidad de litros de combustible.
+// El programa debe pedir el nombre del coche y los litros repostados.
+// El programa termina cuando se introduce “FIN” como nombre.
+
+// Al final, el programa debe mostrar:
+
+// El total de coches atendidos.
+// El total de litros vendidos.
+// El promedio de litros por coche.
+// El nombre del coche que más litros repostó (y cuántos litros fueron).
+
+// 🧪 Ejemplo de ejecución:
+// Nombre del coche 1: Rayo
+// Litros repostados: 30
+// Nombre del coche 2: Mate
+// Litros repostados: 20
+// Nombre del coche 3: Sally
+// Litros repostados: 45
+// Nombre del coche 4: FIN
+
+// Total de coches: 3  
+// Total de litros vendidos: 95  
+// Promedio de litros por coche: 31.67  
+// El coche que más litros repostó fue Sally con 45 litros
+
+let contador = 1
+let nombreCoche = ""
+let litrosRepostados = 1
+let litrosTotales = 0
+let litrosPromedio = 0
+let totalClientes = 0
+let mayorRepostaje = 0
+let nombreCocheMasLitros = ""
+
+
+while (litrosRepostados<=0) { //Comprueba que los litros no sean negativos ni 0 y hace un bucle hasta que metas algo mayor que 0
+    console.log("Debes repostar mas de 0 litros");
+    litrosRepostados=Number(prompt("Cuantos litros quieres repostar"))
+    
+} while (nombreCoche!="FIN") { // Comprueba que el nombre sea distinto de FIN para seguir en el programa y hace el bucle hasta que escribas FIN
+    nombreCoche=String(prompt("Nombre del coche " + contador))
+    console.log("Nombre del coche " + contador + ": " + nombreCoche)
+
+    if (nombreCoche!="FIN") { // Para que no muestre en consola el mensaje de preguntar por los litros ni sume un cliente mas cuando escribas FIN
+        litrosRepostados=Number(prompt("Cuantos litros quieres repostar"))
+        console.log("Litros repostados: " + litrosRepostados)
+        totalClientes++
+        litrosTotales+=litrosRepostados
+        contador++
+        
+        if (litrosRepostados>mayorRepostaje) { 
+            mayorRepostaje=litrosRepostados // Esto hace que compare los litros y si guarde en la variable mayor repostaje siempre el mas grande
+            nombreCocheMasRapido=nombreCoche // Aqui guarda el nombre del coche que haya entrado a este IF en la variable nombreCocheMasRapido
+        }
+    }
+}
+console.log("Total de coches: " + totalClientes);
+console.log("Total de litros vendidos: " + litrosTotales);
+litrosPromedio=litrosTotales/totalClientes
+console.log("Promedio de litros por coche: " + litrosPromedio.toFixed(2));
+console.log("El coche que más litros repostó fue " + nombreCocheMasLitros + " con " + mayorRepostaje + " litros");
+
+</script>

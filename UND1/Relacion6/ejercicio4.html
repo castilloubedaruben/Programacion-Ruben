@@ -1,0 +1,57 @@
+<script>
+    //  4. Calculadora de combustible
+    // Crea un programa que pida una cantidad de litros inicial, un precio por litro y un consumo cada 100 km.
+    // Que vaya calculando el precio de cada viaje (pidiendo los kilómetros) y el combustible restante.
+    // Si no hay combustible suficiente, debe avisar al usuario.
+
+    // Ejemplo:
+
+    // Introduce el combustible inicial: 50
+    // Precio del litro de combustible: 1.45
+    // Consumo cada 100km: 5.6
+
+    // Introduce los kilómetros del viaje 1: 50
+    // Precio del viaje: 4.06€
+    // Combustible restante: 47.2 litros
+
+    // Introduce los kilómetros del viaje 2: 200
+    // Precio del viaje: 16.24€
+    // Combustible restante: 36 litros
+
+    // Introduce los kilómetros del viaje 3: 1000
+    // ¡Combustible insuficiente!
+
+// SIN ACABAR: ME FALLA QUE NO MUESTRE EL PRECIO NI EL COMBUSTIBLE CUANDO NO HAY COMBUSTIBLE SUFICIENTE!!!!!!!!!!!
+
+    let contador = 1;
+    let litrosInicial = Number(prompt("Introduce el combustible inicial:"));
+    let precioLitro = Number(prompt("Precio del litro de combustible:"));
+    let consumoMedio100km = Number(prompt("Consumo cada 100km"));
+    let distanciaViaje = ""
+    let quedaCombustible = true
+
+    let precioMedioKm = (consumoMedio100km * ((precioLitro * distanciaViaje) / 100))
+    let litrosConsumidos = consumoMedio100km * (distanciaViaje / 100);
+
+    console.log("Introduce el combustible inicial: " + litrosInicial);
+    console.log("Precio del litro de combustible: " + precioLitro);
+    console.log("Consumo cada 100km : " + consumoMedio100km);
+
+if (litrosConsumidos>0) {
+    while (quedaCombustible) {
+
+            if (litrosInicial > 0) {
+                distanciaViaje = prompt("Introduce los kilómetros del viaje " + contador + ":");
+                console.log("Introduce los kilómetros del viaje " + contador + ": " + distanciaViaje)
+                contador++
+                precioMedioKm = (consumoMedio100km * ((precioLitro * distanciaViaje) / 100))
+                console.log("Precio del viaje: " + precioMedioKm);
+
+                litrosConsumidos = consumoMedio100km * (distanciaViaje / 100)
+                litrosInicial = litrosInicial - litrosConsumidos;
+                console.log("Combustible restante: " + litrosInicial)
+            }
+        }
+    } console.log("¡Combustible insuficiente!")
+
+</script>

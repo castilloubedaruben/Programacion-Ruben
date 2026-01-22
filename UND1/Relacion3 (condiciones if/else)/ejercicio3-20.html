@@ -1,0 +1,20 @@
+<script>
+    // 20. Evaluación de crédito según historial:
+    // Solicita la puntuación de crédito del usuario y el tiempo que ha estado en el banco:
+    // Si la puntuación es mayor a 650 y lleva más de 5 años como cliente, se le aprueba un crédito premium.
+    // Si la puntuación es mayor a 650 y lleva entre 2 y 5 años, se le aprueba un crédito estándar.
+    // Si la puntuación es menor a 650 o lleva menos de 2 años, se le rechaza el crédito.
+
+    let puntuacionCreditoUsuario = Number(prompt("Indique la puntuacion del credito"))
+    let tiempoCreditoBanco = Number(prompt("Indique el tiempo que lleva en el banco, en años"))
+
+    if (puntuacionCreditoUsuario > 650 && tiempoCreditoBanco > 5) {
+        console.log("!Enhorabuena, se le acepta el credito premium¡")
+    } else if (puntuacionCreditoUsuario > 650 && (tiempoCreditoBanco > 2 && tiempoCreditoBanco < 5)) {
+        console.log("!Enhorabuena, se le acepta un credito estandar¡")
+    } else if (puntuacionCreditoUsuario < 650 || tiempoCreditoBanco < 2) {
+        console.log("Lo siento, se le ha rechazado el credito")
+    } else {
+        console.log("Indique lo valores correctos")
+    }
+</script>

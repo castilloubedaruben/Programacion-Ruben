@@ -1,0 +1,20 @@
+<script>
+//9. Sumar los dígitos de un número de dos cifras:
+//Pide un número de dos cifras e imprime la suma de sus dígitos.
+//Si el número introducido no es de dos cifras, se debe avisar al usuario.
+
+let numeroDosCifras = Number(prompt("Indique un numero de dos cifras"))
+
+if (numeroDosCifras <10) {
+    console.log("El número introducido es menor de dos cifras")
+} else if (numeroDosCifras >99) {
+    console.log("El número introducido es mayor de dos cifras")
+} else {
+    let numeroDosCifras = String(numeroDosCifras)
+    let digito1 = Number(numeroDosCifras[0])
+    let digito2 = Number(numeroDosCifras[1])
+    let sumaDigitos = digito1 + digito2
+    console.log("La suma de los digitos de tu número es igual a " + sumaDigitos)
+}
+
+</script>

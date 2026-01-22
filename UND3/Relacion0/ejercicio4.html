@@ -1,0 +1,15 @@
+<script>
+// 4. ¿Es par?
+// Crea una función llamada esPar que reciba un número y devuelva true si es par o false si es impar.
+
+function esPar(numero) {
+    let resultado = false
+    if (numero%2==0) {
+        resultado=true
+    } 
+    return(resultado)
+}
+let numeroUsuario=Number(prompt("Indique un numero para saber si es par o impar"))
+console.log(esPar(numeroUsuario));
+
+</script>

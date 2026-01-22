@@ -1,0 +1,47 @@
+<script>
+// 3. Filtro de mayores de edad
+// Escribe una función que reciba una matriz de nombres y edades, y devuelva una lista con los nombres de las personas mayores de edad (18 o más años).
+
+// Ejemplo:
+// Entrada:
+
+// const personas = [
+//   ["Ana", 17],
+//   ["Luis", 20],
+//   ["Marta", 18],
+//   ["Carlos", 15],
+//   ["Elena", 25],
+// ];
+// mayoresDeEdad(personas);
+// Salida:
+
+// ["Luis", "Marta", "Elena"]
+
+
+function mayoresDeEdad(matrizDatos) {
+    let personasMayoresEdad = []
+    const MAYORIAEDAD = 18
+    for (let i = 0; i < matrizDatos.length; i++) {
+        if (matrizDatos[i][1]>=MAYORIAEDAD) {
+            personasMayoresEdad.push(matrizDatos[i][0])
+        }
+    }
+    return personasMayoresEdad
+}
+
+// ============================= MAIN ============================= //
+
+let usuarios = [
+    ["Ana", 27],
+    ["Luis", 19],
+    ["Marta", 15],
+    ["Carlos", 25],
+    ["Elena", 15],
+];
+
+let listaUsuariosMayoresEdad = mayoresDeEdad(usuarios)
+
+console.log(listaUsuariosMayoresEdad);
+
+
+</script>

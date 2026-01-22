@@ -1,0 +1,13 @@
+<script>
+  // 18.-
+  // Solicitar un número entero. Mostrar el siguiente número múltiplo de 2, 3 y 5 a partir del número.
+
+  let numeroUsuario = Number(prompt("indica un número"));
+  numeroUsuario++;
+
+  while (numeroUsuario % 2 != 0 || numeroUsuario % 3 != 0 || numeroUsuario % 5 != 0) {
+    numeroUsuario++;
+  }
+  console.log(
+    numeroUsuario + " es el siguiente numero multiplo de 2, 3 y de 5. Fin del bucle");
+</script>

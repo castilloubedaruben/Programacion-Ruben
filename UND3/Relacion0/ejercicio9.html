@@ -1,0 +1,20 @@
+<script>
+// 9. Obtener el menor de tres números
+// Crea una función llamada menorDeTres que reciba tres números y devuelva el menor de los tres.
+
+function menorDeTres(numero1,numero2,numero3) {
+    let resultado = 0
+    if (numero1 < numero2 && numero1 < numero3) {
+        resultado=numero1
+    } else if (numero2 < numero1 && numero2 < numero3) {
+        resultado=numero2
+    } else {
+        resultado= numero3
+    }
+    return resultado
+}
+let numeroUsuario1=Number(prompt("Indica un numero"))
+let numeroUsuario2=Number(prompt("Indica un numero"))
+let numeroUsuario3=Number(prompt("Indica un numero"))
+console.log(menorDeTres(numeroUsuario1,numeroUsuario2,numeroUsuario3));
+</script>

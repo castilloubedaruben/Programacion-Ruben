@@ -1,0 +1,29 @@
+<script>
+    // 22. Determinar el ganador de un juego de piedra, papel o tijera:
+    // Pide a dos jugadores que ingresen "piedra", "papel" o "tijera" y determina el ganador según las reglas del juego.
+
+    let jugador1 = String(prompt("Jugador 1, elige: Piedra, Papel o Tijera"))
+    let jugador2 = String(prompt("Jugador 2, elige: Piedra, Papel o Tijera"))
+    jugador1 = jugador1.toLowerCase()
+    jugador2 = jugador2.toLowerCase()
+
+    const PIEDRA = "piedra"
+    const TIJERA = "tijera"
+    const PAPEL = "papel"
+    let mensaje = ""
+
+    if (jugador1 != PIEDRA || jugador1 != TIJERA || jugador1 != PAPEL) 
+    if (jugador2 != PIEDRA || jugador2 != TIJERA || jugador2 != PAPEL) { // Esto no es correcto!! Mirar ejemplo del profesor
+        mensaje = ("Elige entre Piedra, Papel o Tijera")
+    } else {
+        if (jugador1 == jugador2) {
+        mensaje = ("Empate!")
+        } else if ((jugador1 == PIEDRA && jugador2 == TIJERA) || (jugador1 == TIJERA && jugador2 == PAPEL) || (jugador1 == PAPEL && jugador2 == PIEDRA)) {
+            mensaje = ("Jugador 1 eligió " + jugador1 + " y Jugador 2 eligió " + jugador2 + ". Gana jugador 1! ¡ENHORABUENA!")
+        } else {
+            mensaje = ("Jugador 1 eligió " + jugador1 + " y Jugador 2 eligió " + jugador2 + ". Gana jugador 2! ¡ENHORABUENA!")
+        }
+    }
+    console.log(mensaje)
+
+</script>

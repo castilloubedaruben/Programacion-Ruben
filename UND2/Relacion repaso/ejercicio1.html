@@ -1,0 +1,60 @@
+<script>
+    // 1. Puntuaciones en una partida de bolos
+
+    // Escribe un programa que registre las puntuaciones de un jugador en 10 tiradas de bolos.
+    // El programa debe permitir:
+
+    // Guardar las 10 puntuaciones en un array.
+    // Mostrar un menú con opciones:
+    //   1.Mostrar la puntuación más alta.
+    //   2.Mostrar la puntuación más baja.
+    //   3.Calcular la puntuación total.
+    //   4.Calcular la media.
+    //   5.Salir.
+
+    let tiradasBolos = []
+    let tamanioBolos = 10
+    let numeroAleatorio = 0
+
+    let puntuacionMasAlta = 0
+    let puntuacionMasBaja = 0
+    let sumaTotal=0
+    let mediaJugada=0
+
+    for (let i = 0; i < tamanioBolos; i++) {
+        numeroAleatorio = Math.floor(Math.random() * 11)
+        tiradasBolos.push(numeroAleatorio)
+    }
+
+    let menu = ""
+    
+    while (menu != 5) {
+        menu = prompt("1.Mostrar la puntuación más alta.\n2.Mostrar la puntuación más baja.\n3.Calcular la puntuación total.\n4.Calcular la media.\n5.Salir.\nElige una opcion:")
+        if (menu == 1) {
+            puntuacionMasAlta=tiradasBolos[0]
+            for (const tirada of tiradasBolos) {
+                if (puntuacionMasAlta < tirada) {
+                    puntuacionMasAlta = tirada
+                }
+            }
+            console.log(`La puntuacion mas alta es ${puntuacionMasAlta}`);
+        } else if (menu == 2) {
+            puntuacionMasBaja=tiradasBolos[0]
+            for (const tirada of tiradasBolos) {
+                if (puntuacionMasBaja > tirada) {
+                    puntuacionMasBaja = tirada
+                }
+            }
+            console.log(`La puntuacion mas baja es ${puntuacionMasBaja}`);
+        } else if (menu==3){
+            for (const tirada of tiradasBolos) {
+                sumaTotal+=tirada
+            }
+            console.log(`La puntuacion total es ${sumaTotal}`);
+        } else if (menu==4) {
+            mediaJugada=sumaTotal/tamanioBolos
+            console.log(`La puntuacion total es ${mediaJugada}`);
+        }
+    }
+
+</script>

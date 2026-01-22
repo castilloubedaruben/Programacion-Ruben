@@ -1,0 +1,75 @@
+<script>
+//     9. Simulador de clima avanzado
+// Crea una función que reciba como parámetro la estación ("verano" o "invierno") y genere los valores de clima para un día: 
+// temperatura máxima, temperatura mínima y probabilidad de lluvia. 
+
+// Asegúrate de que:
+// La temperatura máxima no sea menor que la temperatura mínima.
+// Los valores estén dentro de los rangos correspondientes a la estación:
+// Rangos según la estación:
+
+// Invierno:
+// Temperatura máxima: entre -5°C y 15°C.
+// Temperatura mínima: entre -15°C y 5°C.
+// Probabilidad de lluvia: entre 50% y 100%.
+
+// Verano:
+// Temperatura máxima: entre 25°C y 40°C.
+// Temperatura mínima: entre 15°C y 25°C.
+// Probabilidad de lluvia: entre 0% y 50%.
+// El resultado debe ser un array con los valores generados: [Máxima, Mínima, Lluvia].
+
+// Además, crea una segunda función que simule los valores para una semana completa (7 días) de invierno o verano. 
+// Esta función debe llamar a la función del día y devolver un array con los valores generados para los 7 días.
+
+
+function climaDiario(estacion) {
+    let climaDia=[]
+    
+    if (estacion == "invierno") {
+        let tempMaxInv=Math.floor(Math.random() * (-5 - 15 + 1)) + 15
+        let tempMinInv=Math.floor(Math.random() * (-15 - 5 + 1)) + 5
+        let probabilidadLluviaInv=Math.floor(Math.random() * (100 - 50 + 1)) + 50
+            if (tempMaxInv<tempMinInv) {
+                tempMaxInv=Math.floor(Math.random() * (-5 - 15 + 1)) + 15
+                climaDia.push(tempMaxInv,tempMinInv,probabilidadLluviaInv)
+            } else {
+                climaDia.push(tempMaxInv,tempMinInv,probabilidadLluviaInv)
+            }
+    } else {
+        let tempMaxVer=Math.floor(Math.random() * (40 - 25 + 1)) + 25
+        let tempMinVer=Math.floor(Math.random() * (25 - 15 + 1)) + 15
+        let probabilidadLluviaVer=Math.floor(Math.random() * 51)
+            if (tempMaxVer<tempMinVer) {
+                tempMaxVer=Math.floor(Math.random() * (40 - 25 + 1)) + 25
+                climaDia.push(tempMaxVer,tempMinVer,probabilidadLluviaVer)
+            } else {
+                climaDia.push(tempMaxVer,tempMinVer,probabilidadLluviaVer)
+            }
+    }
+    return climaDia
+}
+
+
+function climaSemanal(estacion) {
+    let diasSemana=7
+    let arraySemanal = []
+    let menuVisual = ""
+
+    while (arraySemanal.length<diasSemana) {
+        let diaDeSemana=climaDiario(estacion)
+        arraySemanal.push(diaDeSemana)
+    }
+    for (let i = 0; i < arraySemanal.length; i++) {
+        menuVisual+=`Dia ${i+1}: Tempetaruta Maxima: ${arraySemanal[i][0]} - Temperatura Minima: ${arraySemanal[i][1]} - Probabilidad Lluvia: ${arraySemanal[i][2]}\n`
+    }
+    return menuVisual
+}
+
+// ============================= MAIN ============================= //
+
+let elegirEstacion=prompt("Elige una estacion: invierno o verano")
+let climaDeSemanaUsuario = climaSemanal(elegirEstacion)
+console.log(climaDeSemanaUsuario);
+
+</script>

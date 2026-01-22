@@ -1,0 +1,39 @@
+<script>    
+// 4. Simulador de votaciones
+// Escribe una función que reciba una lista de candidatos y simule una votación aleatoria. 
+// Devuelve una matriz con los nombres de los candidatos y el porcentaje de votos obtenido. La suma de los porcentajes debe ser 100%.
+
+// Ejemplo:
+
+// Entrada:
+// const candidatos = ["Juan", "Sofía", "Carlos"];
+// simularVotaciones(candidatos);
+
+// Salida:
+// [["Juan", 45],["Sofía", 30],["Carlos", 25]]
+
+
+function simularVotaciones(arrayParticipantes) {
+    let resultados = []
+    let porcentajeVotoCandidato = 0
+    let totalVotos = 100
+    let nombreUltimoCandidato = ""
+    for (let i = 0; i < arrayParticipantes.length-1; i++) {
+        porcentajeVotoCandidato=Math.floor(Math.random()*(totalVotos))
+        resultados.push(arrayParticipantes[i],porcentajeVotoCandidato)
+        totalVotos-=porcentajeVotoCandidato
+    }
+    nombreUltimoCandidato=arrayParticipantes[arrayParticipantes.length-1]
+    resultados.push(nombreUltimoCandidato,totalVotos)
+    return resultados
+}
+
+// ============================= MAIN ============================= //
+
+let participantes = ["Ruben","Juan","Carlos","Laura"]
+let votacionPresidente = simularVotaciones(participantes)
+console.log(votacionPresidente);
+
+
+
+</script>

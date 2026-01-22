@@ -1,0 +1,81 @@
+<script>
+    // 5. Sistema de Registro de Calificaciones
+
+    // Desarrolla un programa que permita registrar y gestionar las calificaciones de los estudiantes en una clase.
+    // Usa dos arrays: uno para los nombres de los estudiantes y otro para sus calificaciones.
+    // El programa debe ofrecer al usuario un menú con las siguientes opciones:
+
+    // Añadir un estudiante y su calificación.
+    // Mostrar la calificación promedio de la clase.
+    // Mostrar la calificación más alta y el nombre del estudiante correspondiente.
+    // Mostrar la calificación más baja y el nombre del estudiante correspondiente.
+    // Salir del programa.
+
+    let nombresEstudiantes = [];
+    let calificacionesEstudiantes = [];
+    let anadirEstudiante = "";
+    let anadirCalificacion = 0;
+
+    let calificacionMasAlta = 0;
+    let calificacionMasBaja = 0;
+    let nombreCalificacionMasAlta = ""
+    let nombreCalificacionMasBaja = ""
+
+    let totalCalificaciones = 0
+    let promedioCalificaciones = 0
+
+    let opcion = 0;
+
+    console.log(`1.Añadir un estudiante y su calificación.\n2.Mostrar la calificación promedio de la clase.\n3.Mostrar la calificación más alta y el nombre del estudiante correspondiente.
+4.Mostrar la calificación más baja y el nombre del estudiante correspondiente.\n5.Salir del programa.`);
+
+    opcion = prompt("Elige una opcion");
+        while (opcion<1 || opcion>5) {
+            opcion = prompt("Elige una opcion");
+        }
+    while (opcion != 5) {
+
+        if (opcion == 1) {
+            anadirEstudiante = prompt("Añade el nombre del estudiante");
+            anadirCalificacion = Number(prompt("Añade la calificacion del estudiante"));
+                while (anadirCalificacion<0 || anadirCalificacion>10) {
+                    alert("La calificacion debe estar entre 0 y 10")
+                    anadirCalificacion = Number(prompt("Añade la calificacion del estudiante"))
+                }
+            nombresEstudiantes.push(anadirEstudiante);
+            calificacionesEstudiantes.push(anadirCalificacion);
+        } if (opcion==2) {
+            promedioCalificaciones=0
+            for (let calificacion of calificacionesEstudiantes) {
+                totalCalificaciones+=calificacion
+            } promedioCalificaciones= (totalCalificaciones/calificacionesEstudiantes.length).toFixed(2)
+            console.log(`El promedio de la clase es de ${promedioCalificaciones}`)
+        } if (opcion == 3) {
+            calificacionMasAlta=calificacionesEstudiantes[0]
+            nombreCalificacionMasAlta = calificacionesEstudiantes[0]
+            for (let i = 0; i < calificacionesEstudiantes.length; i++) {;
+                if (calificacionesEstudiantes[i]>calificacionMasAlta) {
+                    calificacionMasAlta=calificacionesEstudiantes[i]
+                    nombreCalificacionMasAlta = nombresEstudiantes[i]
+                }
+            } console.log(`La calificacion mas alta es ${calificacionMasAlta} de ${nombreCalificacionMasAlta}`)
+            
+        } if (opcion==4) {
+            calificacionMasBaja=calificacionesEstudiantes[0]
+            nombreCalificacionMasBaja = calificacionesEstudiantes[0]
+            for (let i = 0; i < calificacionesEstudiantes.length; i++) {;
+                if (calificacionesEstudiantes[i]<calificacionMasBaja) {
+                    calificacionMasBaja=calificacionesEstudiantes[i]
+                    nombreCalificacionMasBaja = nombresEstudiantes[i]
+                }
+            } console.log(`La calificacion mas baja es ${calificacionMasBaja} de ${nombreCalificacionMasBaja}`)
+        } 
+        opcion = prompt("Elige una opcion")
+            while (opcion<1 || opcion>5) {
+            opcion = prompt("Elige una opcion");
+        }
+        totalCalificaciones=0
+    } 
+    console.log("Saliste del programa. Hasta pronto!");
+    
+</script>
