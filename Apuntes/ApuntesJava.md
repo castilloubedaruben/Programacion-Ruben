@@ -157,6 +157,11 @@ ArrayList<String> nombres = new ArrayList<String>();
 ArrayList<String>: Declara un ArrayList que almacena elementos de tipo String.
 new ArrayList<String>(): Crea una nueva instancia del ArrayList.
 
+```java
+ArrayList<String> nombresJugadores = new ArrayList<>(Arrays.asList("Ruben","Juan","Pepe","Javi","Reda"));
+```
+Hacer un array inicializado con valores
+
 **Acceso elementos: get()**
 ```java
 String primerNombre = nombres.get(0);  // Obtiene el primer elemento
