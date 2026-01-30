@@ -57,6 +57,7 @@ public class funciones {
      * @param mensaje Mensaje que se muestra al usuario
      * @param sc Scanner ya creado en el main
      * @return numero entero valido introducido por el usuario
+     * Si esta funcion va con un control de errores de un parametro minimo y maximo debo pasarle los rangos como parametros
      */
     public static int leerInt(String mensaje, Scanner sc) {
         int numero = 0;
@@ -80,6 +81,7 @@ public class funciones {
      * @param mensaje Mensaje que se muestra al usuario
      * @param sc Scanner ya creado en el main
      * @return numero double valido introducido por el usuario
+     * Si esta funcion va con un control de errores de un parametro minimo y maximo debo pasarle los rangos como parametros
      */
     public static double leerDouble(String mensaje, Scanner sc) {
         double numero = 0;
