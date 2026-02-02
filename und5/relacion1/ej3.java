@@ -27,7 +27,7 @@ class Alumno {
         this.calificacion=calificacion;
     }
 
-    public boolean aprobar(int calificacion) {
+    public boolean aprobar() {
         boolean Aprueba=false;
         if (calificacion>=6) {
             Aprueba=true;

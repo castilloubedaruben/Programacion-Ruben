@@ -1,4 +1,4 @@
-package und4.Ejercicios.repaso;
+package und4.ejercicios.repaso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
