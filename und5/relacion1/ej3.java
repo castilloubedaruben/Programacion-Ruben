@@ -21,17 +21,17 @@ class Alumno {
     String materia;
     double calificacion;
 
-    public Alumno(String nombre, String materia, int calificacion) {
+    Alumno(String nombre, String materia, int calificacion) {
         this.nombre=nombre;
         this.materia=materia;
         this.calificacion=calificacion;
     }
 
-    public boolean aprobar() {
-        boolean Aprueba=false;
+    boolean aprobar() {
+        boolean aprueba=false;
         if (calificacion>=6) {
-            Aprueba=true;
+            aprueba=true;
         } 
-        return Aprueba;
+        return aprueba;
     }
 }

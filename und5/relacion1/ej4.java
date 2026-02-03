@@ -14,8 +14,11 @@ public class ej4 {
         System.out.println("Indique una velocidad");
         
         int velocidadmodificar=scanner1.nextInt();
-        System.out.println(coche1.acelerar(velocidadmodificar));
-        System.out.println(coche2.frenar(velocidadmodificar));
+        coche1.acelerar(velocidadmodificar);
+        System.out.println(coche1);
+        coche1.frenar(velocidadmodificar);
+        System.out.println(coche2);
+        scanner1.close();
     }
 }
 
@@ -24,19 +27,24 @@ class Auto {
     String modelo;
     int velocidadActual;
 
-    public Auto(String marca, String modelo, int velocidadActual) {
+    Auto(String marca, String modelo, int velocidadActual) {
         this.marca=marca;
         this.modelo=modelo;
         this.velocidadActual=velocidadActual;
     }
 
-    public int acelerar(int cantidad) {
-        int velocidadAceleracion= velocidadActual+cantidad;
-        return velocidadAceleracion;
+    void acelerar(int cantidad) {
+        velocidadActual+=cantidad;
     }
 
-    public int frenar(int cantidad) {
-        int velocidadFrenado= velocidadActual-cantidad;
-        return velocidadFrenado;
+    void frenar(int cantidad) {
+        velocidadActual-=cantidad;
     }
+
+    @Override
+    public String toString() {
+        return "Coche: " + marca + " | Modelo: " + modelo + " | Velocidad actual: "+ velocidadActual;
+    }
+
+    
 }
