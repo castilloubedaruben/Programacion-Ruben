@@ -18,7 +18,7 @@ public class funciones {
      * Muestra un ArrayList de Strings numerado por pantalla
      *
      * @param mensaje Texto que se muestra antes del listado
-     * @param array ArrayList de Strings a mostrar
+     * @param array   ArrayList de Strings a mostrar
      */
     public static void mostrarArrayString(String mensaje, ArrayList<String> array) {
         imprimirMensaje(mensaje);
@@ -31,15 +31,37 @@ public class funciones {
     /**
      * Muestra dos ArrayList relacionados por indice
      *
-     * @param mensaje Texto que se muestra antes del listado
+     * @param mensaje    Texto que se muestra antes del listado
      * @param arrayTexto ArrayList de Strings (nombres)
      * @param arrayValor ArrayList de numeros (cantidad, precio, etc)
      */
     public static void mostrarArrayDoble(String mensaje, ArrayList<String> arrayTexto, ArrayList<Integer> arrayValor) {
         imprimirMensaje(mensaje);
+        if (arrayTexto.isEmpty()) {
+            imprimirMensaje("No hay registros disponibles aún.");
+        } else {
+            for (int i = 0; i < arrayTexto.size(); i++) {
+                System.out.println("Elemento " + (i + 1) + ": " + arrayTexto.get(i) + " -> " + arrayValor.get(i));
+            }
+        }
+    }
+
+    /**
+     * Muestra cuatro ArrayList relacionados por indice
+     * 
+     * @param mensaje
+     * @param arrayTexto
+     * @param arrayValor
+     * @param arrayValor2
+     * @param arrayTexto2
+     */
+    public static void mostrarArraysMultiple(String mensaje, ArrayList<String> arrayTexto, ArrayList<Double> arrayValor,
+            ArrayList<Double> arrayValor2, ArrayList<String> arrayTexto2) {
+        imprimirMensaje(mensaje);
 
         for (int i = 0; i < arrayTexto.size(); i++) {
-            System.out.println("Elemento " + (i + 1) + ": " + arrayTexto.get(i) + " -> " + arrayValor.get(i));
+            System.out.println((i + 1) + " -> " + arrayTexto.get(i) + " | " + arrayValor.get(i) + " | "
+                    + arrayValor2.get(i) + " | " + arrayTexto2.get(i));
         }
     }
 
@@ -50,14 +72,15 @@ public class funciones {
         System.out.println("\nElige una opcion:\n1: \n2: \n3: \n4: \n5:");
     }
 
-//================================================================ CONTROL DE ERRORES ==============================================================
+    // ================================================================ CONTROL DE ERRORES ==============================================================
     /**
      * Lee un numero entero del usuario con control de errores
      *
      * @param mensaje Mensaje que se muestra al usuario
-     * @param sc Scanner ya creado en el main
+     * @param sc      Scanner ya creado en el main
      * @return numero entero valido introducido por el usuario
-     * Si esta funcion va con un control de errores de un parametro minimo y maximo debo pasarle los rangos como parametros
+     *         Si esta funcion va con un control de errores de un parametro minimo y
+     *         maximo debo pasarle los rangos como parametros
      */
     public static int leerInt(String mensaje, Scanner sc) {
         int numero = 0;
@@ -79,9 +102,10 @@ public class funciones {
      * Lee un numero decimal del usuario con control de errores
      *
      * @param mensaje Mensaje que se muestra al usuario
-     * @param sc Scanner ya creado en el main
+     * @param sc      Scanner ya creado en el main
      * @return numero double valido introducido por el usuario
-     * Si esta funcion va con un control de errores de un parametro minimo y maximo debo pasarle los rangos como parametros
+     *         Si esta funcion va con un control de errores de un parametro minimo y
+     *         maximo debo pasarle los rangos como parametros
      */
     public static double leerDouble(String mensaje, Scanner sc) {
         double numero = 0;
@@ -103,9 +127,9 @@ public class funciones {
      * Lee una opcion valida de un menu
      *
      * @param mensaje Mensaje del menu a mostrar
-     * @param min Valor minimo permitido
-     * @param max Valor maximo permitido
-     * @param sc Scanner ya creado en el main
+     * @param min     Valor minimo permitido
+     * @param max     Valor maximo permitido
+     * @param sc      Scanner ya creado en el main
      * @return opcion valida elegida por el usuario
      */
     public static int leerOpcionMenu(String mensaje, int min, int max, Scanner sc) {
@@ -124,6 +148,42 @@ public class funciones {
         } while (!correcta);
         return opcion;
     }
+
+        /**
+     * Pide un indice valido para un ArrayList
+     * 
+     * @param mensaje Mensaje que se muestra al usuario
+     * @param array ArrayList sobre el que se quiere validar el indice
+     * @param sc Scanner
+     * @return indice valido
+     */
+    public static int leerIndiceValido(String mensaje, ArrayList<?> array, Scanner sc) {
+        int indiceUsuario = leerInt(mensaje, sc);
+
+        while (indiceUsuario < 0 || indiceUsuario > array.size() - 1) {
+            imprimirMensaje("Indice incorrecto");
+            indiceUsuario = leerInt(mensaje, sc);
+        }
+        return indiceUsuario;
+    }
+
+    public static void eliminarPorIndiceTriple(String mensaje, ArrayList<?> array1, ArrayList<?> array2, ArrayList<?> array3, Scanner sc) {
+        if (array1.isEmpty()) {
+            imprimirMensaje("No hay registros disponibles aún");
+        }
+        int indiceUsuario = leerInt(mensaje, sc);
+
+        while (indiceUsuario < 0 || indiceUsuario >= array1.size()) {
+            imprimirMensaje("Indice incorrecto");
+            indiceUsuario = leerInt(mensaje, sc);
+        }
+
+        array1.remove(indiceUsuario);
+        array2.remove(indiceUsuario);
+        array3.remove(indiceUsuario);
+        imprimirMensaje("Eliminado correctamente");
+}
+
 
     /**
      * Añade a un array comprobando si esta duplicado
@@ -149,7 +209,7 @@ public class funciones {
      * añade y devuelve false, si si está no lo añade y devuelve true
      *
      * @param mensajeString mensaje a mostrar como "añade un nombre"
-     * @param array array donde comprueba si esta el String
+     * @param array         array donde comprueba si esta el String
      * @param sc
      */
     public static void leerStringArray(String mensajeString, ArrayList<String> array, Scanner sc) {
@@ -160,7 +220,7 @@ public class funciones {
         } while (aniadirSinDuplicados(stringUsuario, array));
     }
 
-// ====================================================== BUSCAR EN ARRAYLIST =====================================================================
+    // ====================================================== BUSCAR EN ARRAYLIST =====================================================================
     /**
      * Elegir elemento aleatorio de un ArrayList, devuelve ese elemento
      *
@@ -180,7 +240,7 @@ public class funciones {
      * Buscar un int en un ArrayList<Integer>, devuelve true si esta o false si
      * no
      *
-     * @param array ArrayList de int donde buscar
+     * @param array  ArrayList de int donde buscar
      * @param numero int a buscar
      * @return true si se encuentra, false si no
      */
@@ -213,14 +273,14 @@ public class funciones {
         return encontrado;
     }
 
-// ====================================================== RELLENAR ARRAYLIST =====================================================================
+    // ====================================================== RELLENAR ARRAYLIST =====================================================================
     /**
      * Rellenar un ArrayList con números aleatorios
      *
-     * @param array el array a rellenar
+     * @param array   el array a rellenar
      * @param tamanio tamaño maximo del array
-     * @param minimo numero minimo del aleatorio
-     * @param maximo numero maximo del aleatorio
+     * @param minimo  numero minimo del aleatorio
+     * @param maximo  numero maximo del aleatorio
      */
     public static void rellenarArrayRandom(ArrayList<Integer> array, int tamanio, int minimo, int maximo) {
         int numero;
@@ -234,10 +294,10 @@ public class funciones {
     /**
      * Rellenar ArrayList con números aleatorios sin repetir
      *
-     * @param array el array a rellenar
+     * @param array   el array a rellenar
      * @param tamanio tamaño maximo del array
-     * @param minimo numero minimo del aleatorio
-     * @param maximo numero maximo del aleatorio
+     * @param minimo  numero minimo del aleatorio
+     * @param maximo  numero maximo del aleatorio
      */
     public static void rellenarArrayRandomSinRepetir(ArrayList<Integer> array, int tamanio, int minimo, int maximo) {
         int numero;
@@ -255,9 +315,10 @@ public class funciones {
      * Rellena array con un elemento que le pasemos
      *
      * @param arrayIntroducida array del tablero
-     * @param tamanio tamaño del tablero
-     * @param simbolo con que se va a rellenar el tablero, puede ser numero pero
-     * cambiar valor String por Int o Double
+     * @param tamanio          tamaño del tablero
+     * @param simbolo          con que se va a rellenar el tablero, puede ser numero
+     *                         pero
+     *                         cambiar valor String por Int o Double
      */
     public static void construyeTablero(ArrayList<String> arrayIntroducida, int tamanio, String simbolo) {
         for (int i = 0; i < tamanio; i++) {
@@ -269,8 +330,8 @@ public class funciones {
      * Rellena los numeros aleatoriamente en un tablero de posiciones
      *
      * @param arrayOculta Tablero
-     * @param minimo Mínimo introducido posible de algo
-     * @param maximo Máximo introducido posible de algo
+     * @param minimo      Mínimo introducido posible de algo
+     * @param maximo      Máximo introducido posible de algo
      */
     public static void randomizaTablero(ArrayList<String> arrayOculta, int minimo, int maximo) {
         final int CANTIDAD = (int) (Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
