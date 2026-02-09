@@ -57,6 +57,17 @@ class Reloj {
 
     @Override
     public String toString() {
-        return "Hora actual: " +hora +":" +minuto+":"+segundo;
+        String mensajeHora="";
+            if (hora < 10) {
+                mensajeHora += "0";
+            }
+            if (minuto<10) {
+                mensajeHora+="0";
+            }
+            if (segundo<10) {
+                mensajeHora+="0";
+            }
+            mensajeHora+= segundo;
+        return mensajeHora;
     }
 }

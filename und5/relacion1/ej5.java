@@ -13,11 +13,11 @@ public class ej5 {
 
         System.out.println("Indica una temperatura:");
         double temperaturaAConvertir = scanner1.nextDouble();
-        termometro1.convertirAFahrenheit(temperaturaAConvertir);
-        System.out.println(termometro1.convertirAFahrenheit(temperaturaAConvertir));
+        termometro1.convertirAFahrenheit();
+        System.out.println(termometro1.convertirAFahrenheit());
         System.out.println("Indica una segunda temperatura:");
         temperaturaAConvertir = scanner1.nextDouble();
-        System.out.println(termometro2.convertirAFahrenheit(temperaturaAConvertir));
+        System.out.println(termometro2.convertirAFahrenheit());
         scanner1.close();
     }
 }
@@ -25,7 +25,7 @@ public class ej5 {
 class Termometro {
     double temperatura;
     
-    double convertirAFahrenheit(double temperatura) {
+    double convertirAFahrenheit() {
         double fahrenheit = (temperatura * 9 / 5) + 32;
         return fahrenheit;
     }
