@@ -10,24 +10,28 @@ public class Supermercado {
         this.articulos = articulos;
     }
 
+    public Supermercado() {
+        articulos = new ArrayList<>();
+    }
+
     public void agregarArticulo(Producto producto) {
         articulos.add(producto);
     }
 
     public void venderArticulo(Producto producto, int cantidadComprar) {
-        cantidadComprar=0;
         if (producto.getCantidadStock()>0) {
-            producto.setCantidadStock(cantidadComprar-producto.getCantidadStock());
+            producto.setCantidadStock(producto.getCantidadStock()-cantidadComprar);
         }
     }
 
     @Override
     public String toString() {
         String inventario="";
+        int contador =0;
         for (Producto articulo : articulos) {
-            inventario="Supermercado --> articulos:" + articulo(i) + "]";
+            inventario+="Supermercado --> articulo " + contador++ +":" + articulo + "\n";
         }
-        return "Supermercado --> articulos:" + articulos + "]";
+        return inventario;
     }
 
     
