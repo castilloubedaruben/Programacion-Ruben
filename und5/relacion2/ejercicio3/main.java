@@ -8,12 +8,16 @@ public class main {
 
         System.out.println(producto1.getCantidadStock());
         System.out.println(producto2.getDescripcion());
-        System.out.println(producto1.setPrecio(-15));
-        // System.out.println(producto1.setPrecio(20.6));
-        //     if (producto1.setPrecio(20.6)) {
-        //         producto1.precio(20.6);
-        //     }
-        // System.out.println(producto1.getPrecio());
+        System.out.println(producto1.setPrecio(20));
+        
+        // if (!producto1.setPrecio(20)) {
+        //     System.out.println("Error al cambiar el precio");
+        // } else {
+        //     producto1.setPrecio(20);
+        // }
+
+        System.out.println(producto1.getPrecio());
+
         Coviran.agregarArticulo(producto2);
         Coviran.agregarArticulo(producto1);
         System.out.println(Coviran);

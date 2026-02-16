@@ -1,6 +1,7 @@
 package und5.relacion2.ejercicio3;
 
 public class Producto {
+    
     private String id;
     private String nombre;
     private String descripcion;
@@ -11,7 +12,7 @@ public class Producto {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.precio = precio;
+        setPrecio(precio);
         this.cantidadStock = cantidadStock;
     }
 

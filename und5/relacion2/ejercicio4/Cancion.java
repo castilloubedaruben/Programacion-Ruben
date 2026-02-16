@@ -40,13 +40,8 @@ public class Cancion {
 
     @Override
     public String toString() {
-        int contador = 0;
-        StringBuilder sb = new StringBuilder();
-        sb.append("Cancion " + contador++);
-        sb.append(": titulo:").append(titulo);
-        sb.append("| artista:").append(artista);
-        sb.append("| duracion: ").append(duracion);
-        return sb.toString();
+        return "Cancion --> " + titulo + " artista:" + artista + " duracion: " + duracion + "\n";
     }
 
+    
 }

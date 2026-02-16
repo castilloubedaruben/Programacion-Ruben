@@ -13,11 +13,6 @@ public class Playlist {
         listaCanciones.add(cancion);
     }
 
-    @Override
-    public String toString() {
-        return "Playlist : " + listaCanciones;
-    }
-    
     public int duracionPlaylist() {
         int totalDuracion=0;
             for (Cancion canciones : listaCanciones) {
@@ -25,5 +20,9 @@ public class Playlist {
             }
             return totalDuracion;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Playlist \n" + listaCanciones;
+    }
 }
