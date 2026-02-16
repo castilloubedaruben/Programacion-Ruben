@@ -1,8 +1,6 @@
 package und5.relacion2.ejercicio4;
 import java.util.ArrayList;
 
-import und5.relacion2.ejercicio3.Producto;
-
 public class Playlist {
     
     ArrayList<Cancion> listaCanciones;
@@ -20,7 +18,7 @@ public class Playlist {
         return "Playlist : " + listaCanciones;
     }
     
-    public int duracionPlaylist(Cancion cancion) {
+    public int duracionPlaylist() {
         int totalDuracion=0;
             for (Cancion canciones : listaCanciones) {
                 totalDuracion+=canciones.getDuracion();
