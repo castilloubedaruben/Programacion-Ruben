@@ -19,20 +19,21 @@ public class Supermercado {
     }
 
     public void venderArticulo(Producto producto, int cantidadComprar) {
-        if (producto.getCantidadStock()>0) {
-            producto.setCantidadStock(producto.getCantidadStock()-cantidadComprar);
+        if (articulos.contains(producto)) {
+            int cantidadRestante=producto.getCantidadStock()-cantidadComprar;
+            if (cantidadRestante>=0) {
+                producto.setCantidadStock(cantidadRestante);
+            }
         }
     }
 
     @Override
     public String toString() {
-        String inventario="";
-        int contador =0;
-        for (Producto articulo : articulos) {
-            inventario+="Supermercado --> articulo " + contador++ +":" + articulo + "\n";
+        String inventario = "";
+        for (int i = 1; i <= articulos.size(); i++) {
+            inventario += "Supermercado --> Articulo " + i + ":" + articulos.get(i - 1) + "\n";
         }
         return inventario;
     }
 
-    
 }

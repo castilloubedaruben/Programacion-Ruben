@@ -2,8 +2,6 @@ package und5.relacion2.ejercicio5;
 
 import java.util.ArrayList;
 
-import und5.relacion2.ejercicio4.Cancion;
-
 public class Cine {
     ArrayList<Pelicula> listaPeliculas;
 

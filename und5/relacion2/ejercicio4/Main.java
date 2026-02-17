@@ -1,6 +1,6 @@
 package und5.relacion2.ejercicio4;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Cancion cancion1 =  new Cancion("A", "lohkhjfg", 2);
         Cancion cancion2 =  new Cancion("B", "asdfafd", 1);

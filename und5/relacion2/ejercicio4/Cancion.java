@@ -42,6 +42,4 @@ public class Cancion {
     public String toString() {
         return "Cancion --> " + titulo + " artista:" + artista + " duracion: " + duracion + "\n";
     }
-
-    
 }

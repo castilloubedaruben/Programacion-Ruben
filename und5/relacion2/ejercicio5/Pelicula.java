@@ -45,10 +45,7 @@ public class Pelicula {
     }
 
     public void setDuracion(int duracion) {
-        if (duracion<0) {
-            duracion=duracion;
-        }
-        this.duracion = duracion;
+        if (duracion>0) { this.duracion = duracion; }
     }
 
     @Override
