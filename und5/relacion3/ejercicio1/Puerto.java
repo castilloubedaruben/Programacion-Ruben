@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import und5.relacion2.eje1.barco;
-
 public class Puerto {
     private String nombre;
     String ubicacion;
@@ -43,7 +41,11 @@ public class Puerto {
     }
 
     public void setCapacidadMaxima(int capacidadMaxima) {
-        this.capacidadMaxima = capacidadMaxima;
+        if (capacidadMaxima>amarres.size()) {
+            this.capacidadMaxima=this.capacidadMaxima;
+        } else {
+            this.capacidadMaxima = capacidadMaxima;
+        }
     }
 
     public String getTelefonoContacto() {
@@ -62,8 +64,15 @@ public class Puerto {
         return amarres;
     }
 
-    public void agregarEmbarcacion(Embarcacion embarcacionAgregar) {
-        embarcaciones.add(embarcacionAgregar);
+    public boolean registrarEmbarcacion(Embarcacion embarcacionAgregar) {
+        boolean registroCorrecto=false;
+        for (Embarcacion barco : embarcaciones) {
+            if (!embarcacionAgregar.getMatricula().equalsIgnoreCase(barco.getMatricula())) {
+                embarcaciones.add(embarcacionAgregar);
+                registroCorrecto=true;
+            }
+        }
+        return registroCorrecto;
     }
 
     public void agregarAmarre(Amarre amarreAgregar) {
@@ -80,15 +89,15 @@ public class Puerto {
         return embarcacionBuscar;
     }
 
-    public String asignarEmbarcacionAmarre(String matriculaEmbarcacionAsignar) {
-        String mensaje="No se ha podido asignar el amarre";
+    public String asignarAmarre(String matriculaEmbarcacionAsignar, Amarre amarreAsignar) {
+        String mensaje;
         int esloraEmbarcacion=buscarMatriculaEmbarcacion(matriculaEmbarcacionAsignar).getEslora();
-        for (int i = 0; i < amarres.size(); i++) {
-            if (esloraEmbarcacion<=amarres.get(i).getLongitudMaxima()) {
-                amarres.get(i).setOcupacion(false);
-                mensaje="Barco asignado con exito! Ocupacion modificada";
+            if ((esloraEmbarcacion<=amarreAsignar.getLongitudMaxima()) && amarreAsignar.getOcupacion()) {
+                amarreAsignar.setOcupacion(false);
+                mensaje="Embarcacion asignada correctamente";
+            } else {
+                mensaje="No se ha podido asignar embarcacion al amarre";
             }
-        }
         return mensaje;
     }
 

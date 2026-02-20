@@ -46,10 +46,6 @@ public class Embarcacion {
         return eslora;
     }
 
-    public void setEslora(int eslora) {
-        this.eslora = eslora;
-    }
-
     public String getTipo() {
         return tipo;
     }

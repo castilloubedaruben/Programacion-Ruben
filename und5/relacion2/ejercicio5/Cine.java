@@ -18,9 +18,9 @@ public class Cine {
         return "Cine --" + listaPeliculas;
     }
 
-    public boolean buscarPelicula(String tituloPeliculaBuscar) {
+    public Pelicula buscarPelicula(String tituloPeliculaBuscar) {
         boolean encontrada=false;
-        Pelicula peliculaActual; // creo una variable de peliculaCtual para guardar la pelicula de i de cada iteracion
+        Pelicula peliculaActual=null; // creo una variable de peliculaCtual para guardar la pelicula de i de cada iteracion
         // para compararla, si no no puedo acceder al metodo getTitulo()
         for (int i = 0; i < listaPeliculas.size() && !encontrada; i++) {
             peliculaActual=listaPeliculas.get(i);
@@ -28,7 +28,7 @@ public class Cine {
                 encontrada=true;
             }
         }
-        return encontrada;
+        return peliculaActual;
     }
 
     public int duracionMediaPeliculas() {

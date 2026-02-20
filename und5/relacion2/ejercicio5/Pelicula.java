@@ -50,6 +50,6 @@ public class Pelicula {
 
     @Override
     public String toString() {
-        return "Pelicula: " + titulo + "- sinopsis: " + sinopsis + " - director: " + director + " - duracion: " + duracion + "\n";
+        return titulo + " - sinopsis: " + sinopsis + " - director: " + director + " - duracion: " + duracion + "\n";
     }
 }

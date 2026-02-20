@@ -1,6 +1,6 @@
 public class Amarre {
 
-    private String numeroAmarre;
+    private int numeroAmarre;
     private int longitudMaxima;
     private boolean ocupacion;
     double precioDiario;
@@ -11,9 +11,9 @@ public class Amarre {
     public Amarre(int longitudMaxima, double precioDiario, String tipoAmarre) {
         // como hemos puesto un identificador que se genera solo, no se puede crear el constructor con este atributo
         // ya que queremos que se genere solo y no sea modificable, por esto eliminamos el setter para que no puedan modificarlo nunca
-        this.numeroAmarre = "A-"+contadorParaAmarre;
+        this.numeroAmarre = contadorParaAmarre;
         this.longitudMaxima = longitudMaxima;
-        this.ocupacion = true;
+        this.ocupacion = false;
         this.precioDiario = precioDiario;
         this.tipoAmarre = tipoAmarre;
         contadorParaAmarre++;
@@ -22,7 +22,7 @@ public class Amarre {
     public Amarre() {
     }
 
-    public String getNumeroAmarre() {
+    public int getNumeroAmarre() {
         return numeroAmarre;
     }
 

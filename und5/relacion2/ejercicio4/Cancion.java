@@ -40,6 +40,6 @@ public class Cancion {
 
     @Override
     public String toString() {
-        return "Cancion --> " + titulo + " artista:" + artista + " duracion: " + duracion + "\n";
+        return "Cancion --> " + titulo + " de " + artista + " | duracion: " + duracion + "\n";
     }
 }
