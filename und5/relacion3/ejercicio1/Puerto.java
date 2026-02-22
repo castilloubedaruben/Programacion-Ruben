@@ -7,14 +7,14 @@ public class Puerto {
     String telefonoContacto;
     private ArrayList<Embarcacion> embarcaciones;
     private ArrayList<Amarre> amarres;
-    
-    public Puerto(String nombre, String ubicacion, int capacidadMaxima, String telefonoContacto) {
+
+    public Puerto(String nombre, String ubicacion, String telefonoContacto) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
-        this.capacidadMaxima = capacidadMaxima;
+        this.capacidadMaxima = 50;
         this.telefonoContacto = telefonoContacto;
-        this.embarcaciones=new ArrayList<>();
-        this.amarres=new ArrayList<>();
+        this.embarcaciones = new ArrayList<>();
+        this.amarres = new ArrayList<>();
     }
 
     public Puerto() {
@@ -41,9 +41,7 @@ public class Puerto {
     }
 
     public void setCapacidadMaxima(int capacidadMaxima) {
-        if (capacidadMaxima>amarres.size()) {
-            this.capacidadMaxima=this.capacidadMaxima;
-        } else {
+        if (capacidadMaxima > amarres.size()) {
             this.capacidadMaxima = capacidadMaxima;
         }
     }
@@ -64,46 +62,96 @@ public class Puerto {
         return amarres;
     }
 
-    public boolean registrarEmbarcacion(Embarcacion embarcacionAgregar) {
-        boolean registroCorrecto=false;
-        for (Embarcacion barco : embarcaciones) {
-            if (!embarcacionAgregar.getMatricula().equalsIgnoreCase(barco.getMatricula())) {
-                embarcaciones.add(embarcacionAgregar);
-                registroCorrecto=true;
-            }
-        }
-        return registroCorrecto;
+    public void registrarEmbarcacion(Embarcacion embarcacionAgregar) {
+        embarcaciones.add(embarcacionAgregar);
     }
 
     public void agregarAmarre(Amarre amarreAgregar) {
         amarres.add(amarreAgregar);
     }
 
-    public Embarcacion buscarMatriculaEmbarcacion(String matriculaBuscar) {
+    public String asignarAmarre(String matriculaEmbarcacionAsignar, int amarreAsignar) {
+        String mensaje="";
+        int esloraEmbarcacion = buscarEmbarcacion(matriculaEmbarcacionAsignar).getEslora();
+        double capacidadAmarre = 0;
+        for (int i = 0; i < amarres.size(); i++) {
+            if (amarres.get(i).getNumeroAmarre() == amarreAsignar) {
+                capacidadAmarre=amarres.get(i).getLongitudMaxima();
+            }
+
+            if ((esloraEmbarcacion <= capacidadAmarre) && !amarres.get(i).getOcupacion()) {
+                amarres.get(i).setOcupacion(true);
+                mensaje = "Embarcacion asignada correctamente";
+            } else {
+                mensaje = "No se ha podido asignar embarcacion al amarre";
+            }
+        }
+        return mensaje;
+    }
+
+    public String liberarAmarre(Amarre amarreAsignar) {
+        String mensaje;
+        if (!amarreAsignar.getOcupacion()) {
+            amarreAsignar.setOcupacion(true);
+            mensaje = "Amarre liberado";
+        } else {
+            mensaje = "No se ha podido liberar amarre";
+        }
+        return mensaje;
+    }
+
+    public ArrayList mostrarAmarrerLibres() {
+        ArrayList amarresLibres = new ArrayList();
+        for (Amarre amarre : amarres) {
+            if (amarre.getOcupacion()) {
+                amarresLibres.add(amarre);
+            }
+        }
+        return amarresLibres;
+    }
+
+    public ArrayList mostrarAmarrerOcupados() {
+        ArrayList amarresOcupados = new ArrayList();
+        for (Amarre amarre : amarres) {
+            if (!amarre.getOcupacion()) {
+                amarresOcupados.add(amarre);
+            }
+        }
+        return amarresOcupados;
+    }
+
+    public Embarcacion buscarEmbarcacion(String matriculaBuscar) {
         Embarcacion embarcacionBuscar = new Embarcacion();
         for (Embarcacion barco : embarcaciones) {
             if (barco.getMatricula().equals(matriculaBuscar)) {
-                embarcacionBuscar=barco;
+                embarcacionBuscar = barco;
             }
         }
         return embarcacionBuscar;
     }
 
-    public String asignarAmarre(String matriculaEmbarcacionAsignar, Amarre amarreAsignar) {
-        String mensaje;
-        int esloraEmbarcacion=buscarMatriculaEmbarcacion(matriculaEmbarcacionAsignar).getEslora();
-            if ((esloraEmbarcacion<=amarreAsignar.getLongitudMaxima()) && amarreAsignar.getOcupacion()) {
-                amarreAsignar.setOcupacion(false);
-                mensaje="Embarcacion asignada correctamente";
-            } else {
-                mensaje="No se ha podido asignar embarcacion al amarre";
+    public double calcularIngresosDiariosActuales() {
+        double totalIngresosDiarios = 0;
+        for (Amarre amarre : amarres) {
+            if (!amarre.getOcupacion()) {
+                totalIngresosDiarios += amarre.precioDiario;
             }
-        return mensaje;
+        }
+        return totalIngresosDiarios;
+    }
+
+    public double calcularIngresosDiariosMaximos() {
+        double totalIngresosDiarios = 0;
+        for (Amarre amarre : amarres) {
+            totalIngresosDiarios += amarre.precioDiario;
+        }
+        return totalIngresosDiarios;
     }
 
     @Override
     public String toString() {
         return "Puerto " + nombre + " | " + ubicacion + " | capacidad: " + capacidadMaxima
-                + " | telefono de contacto: " + telefonoContacto + "\n Embarcaciones:\n" + embarcaciones + "\n Amarres:\n" + amarres;
+                + " | telefono de contacto: " + telefonoContacto + "\n Embarcaciones:\n" + embarcaciones
+                + "\n Amarres:\n" + amarres;
     }
 }
