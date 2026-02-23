@@ -3,9 +3,9 @@ public class Main {
     public static void main(String[] args) {
         final int CANTIDADEMARCACIONES = 5;
         final int CANTIDADMAXIMAAMARRES = 10;
-        int contador =0;
+        int contador = 0;
         Embarcacion aleatorio = new Embarcacion();
-        Amarre aleatoria = new  Amarre();
+        Amarre aleatoria = new Amarre();
         
         Puerto puertoMotril = new Puerto("Puerto Ennies Lobby", Faker.ciudad(), Faker.telefono());
                 

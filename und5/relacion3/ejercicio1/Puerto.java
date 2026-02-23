@@ -72,7 +72,7 @@ public class Puerto {
 
     public String asignarAmarre(String matriculaEmbarcacionAsignar, int amarreAsignar) {
         String mensaje="";
-        int esloraEmbarcacion = buscarEmbarcacion(matriculaEmbarcacionAsignar).getEslora();
+        double esloraEmbarcacion = buscarEmbarcacion(matriculaEmbarcacionAsignar).getEslora();
         double capacidadAmarre = 0;
         for (int i = 0; i < amarres.size(); i++) {
             if (amarres.get(i).getNumeroAmarre() == amarreAsignar) {
@@ -134,7 +134,7 @@ public class Puerto {
         double totalIngresosDiarios = 0;
         for (Amarre amarre : amarres) {
             if (!amarre.getOcupacion()) {
-                totalIngresosDiarios += amarre.precioDiario;
+                totalIngresosDiarios += amarre.getPrecioDiario();
             }
         }
         return totalIngresosDiarios;
@@ -143,7 +143,7 @@ public class Puerto {
     public double calcularIngresosDiariosMaximos() {
         double totalIngresosDiarios = 0;
         for (Amarre amarre : amarres) {
-            totalIngresosDiarios += amarre.precioDiario;
+            totalIngresosDiarios += amarre.getPrecioDiario();
         }
         return totalIngresosDiarios;
     }

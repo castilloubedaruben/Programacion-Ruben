@@ -1,13 +1,13 @@
 public class Embarcacion {
     private String matricula;
     private String nombre;
-    private int eslora;
+    private double eslora;
     private String tipo;
     private String propietario;
     private String anioFabricacion;
     double valorEstimado;
 
-    public Embarcacion(String matricula, String nombre, int eslora, String tipo, String propietario,
+    public Embarcacion(String matricula, String nombre, double eslora, String tipo, String propietario,
             String anioFabricacion, double valorEstimado) {
         setMatricula(matricula);
         this.nombre = nombre;
@@ -26,9 +26,9 @@ public class Embarcacion {
     }
 
     public void setMatricula(String matricula) {
-        String prefijoMatricula="BOAT-";
+        String prefijoMatricula = "BOAT-";
         if (matricula.startsWith(prefijoMatricula)) {
-            this.matricula=matricula;
+            this.matricula = matricula;
         } else {
             this.matricula = prefijoMatricula + matricula;
         }
@@ -42,8 +42,14 @@ public class Embarcacion {
         this.nombre = nombre;
     }
 
-    public int getEslora() {
+    public double getEslora() {
         return eslora;
+    }
+
+    public void setEslora(double eslora) {
+        if (eslora > 0) {
+            this.eslora = eslora;
+        }
     }
 
     public String getTipo() {
@@ -72,8 +78,9 @@ public class Embarcacion {
 
     @Override
     public String toString() {
-        return "Embarcacion --> " + nombre + " - " + matricula + " | Eslora:" + eslora + " | Tipo de embarcacion: " + tipo
-                + " | Propietario: " + propietario + " | Año de fabricacion: " + anioFabricacion + " | Valor estimado: "
+        return "Embarcacion --> " + nombre + " - " + matricula + " | Eslora:" + eslora + "m | Tipo de embarcacion: "
+                + tipo
+                + " propiedad de: " + propietario + " | Año de fabricacion: " + anioFabricacion + " | Valor estimado: "
                 + valorEstimado + "\n";
     }
 }
