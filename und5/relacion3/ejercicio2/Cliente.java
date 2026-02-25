@@ -80,7 +80,7 @@ public class Cliente {
     @Override
     public String toString() {
         return "ID Cliente: " + id + " - " + nombre + " - " + dni + ". Telefono " + telefono + ", correo de contacto: "
-                + email + ", con direccion en " + direccion;
+                + email + ", con direccion en " + direccion + "\n";
     }
 
 }

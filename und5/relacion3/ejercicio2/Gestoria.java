@@ -95,11 +95,10 @@ public class Gestoria {
         return tramiteRepetido;
     }
 
-    public boolean abrirExpediente(Cliente cliente, Tramite tramite, String estado, boolean pagado,
-            String fechaApertura) {
+    public boolean abrirExpediente(Cliente cliente, Tramite tramite, String fechaApertura) {
         boolean expedienteRegistrado = false;
         if (clientes.contains(cliente) && tramites.contains(tramite)) {
-            Expediente nuevoExpediente = new Expediente(cliente, tramite, pagado, telefono);
+            Expediente nuevoExpediente = new Expediente(cliente, tramite, fechaApertura);
             expedientes.add(nuevoExpediente);
             expedienteRegistrado = true;
         }
@@ -114,6 +113,7 @@ public class Gestoria {
                 estadoCambiado = true;
             } else if (expedienteModificar.getEstado().equals(EN_PROCESO)) {
                 expedienteModificar.setEstado(FINALIZADO);
+                expedienteModificar.setPagado(true);
                 estadoCambiado = true;
             }
         }
@@ -129,4 +129,71 @@ public class Gestoria {
         return pagadoCorrecto;
     }
 
+    public ArrayList<Expediente> mostrarPorEstado(String estado) {
+        ArrayList<Expediente> expedientesPorEstado = new ArrayList<>();
+            for (Expediente expediente : expedientes) {
+                if (expediente.getEstado().equalsIgnoreCase(estado)) {
+                    expedientesPorEstado.add(expediente);
+                }
+            }
+        return expedientesPorEstado;
+    }
+
+    public ArrayList<Expediente> mostrarSinPagar() {
+        ArrayList<Expediente> expedientesSinPagar = new ArrayList<>();
+            for (Expediente expediente : expedientes) {
+                if (!expediente.isPagado()) {
+                    expedientesSinPagar.add(expediente);
+                }
+            }
+        return expedientesSinPagar;
+    }
+    
+    public double facturacionTotal() {
+        double totalFacturacion=0;
+        for (Expediente expediente : expedientes) {
+            if (expediente.isPagado()) {
+                totalFacturacion+=expediente.getTramite().getPrecioBase();
+            }
+        }
+        return totalFacturacion;
+    }
+
+    public Cliente buscarCliente(String dni) {
+        Cliente clienteBuscar=null;
+            for (Cliente cliente : clientes) {
+                if (cliente.getDni().equals(dni)) {
+                    clienteBuscar=cliente;
+                }
+            }
+        return clienteBuscar;
+    }
+
+    public Tramite buscarTramite(String codigo) {
+        Tramite tramiteBuscar=null;
+            for (Tramite tramite : tramites) {
+                if (tramite.getCodigo().equals(codigo)) {
+                    tramiteBuscar=tramite;
+                }
+            }
+        return tramiteBuscar;
+    }
+
+    public Expediente buscarExpediente(int numeroExpediente) {
+        Expediente expedienteBuscar=null;
+            for (Expediente expediente : expedientes) {
+                if (expediente.getNumeroExpediente()==numeroExpediente) {
+                    expedienteBuscar=expediente;
+                }
+            }
+        return expedienteBuscar;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + ". Direccion: " + direccion + ", telefono: " + telefono + ". Horario para clientes de "
+                + horario + ". \n Listado de clientes:\n" + clientes + "\n Listado de tramites:\n" + tramites + "\n Listado de expedientes \n" + expedientes;
+    }
+
+    
 }

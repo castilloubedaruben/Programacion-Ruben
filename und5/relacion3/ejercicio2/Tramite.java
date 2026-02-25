@@ -83,6 +83,6 @@ public class Tramite {
     @Override
     public String toString() {
         return "Datos del tramite " + codigo + ": " + nombreTramite + ". Tiene un precio de " + precioBase
-                + " y una duracion de " + duracionDias + ". " + necesitaCita();
+                + " y una duracion de " + duracionDias + ". " + necesitaCita() + "\n";
     }
 }

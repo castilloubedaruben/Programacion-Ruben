@@ -80,7 +80,7 @@ public class Expediente {
     @Override
     public String toString() {
         return "Expediente" + numeroExpediente + ". "+ cliente + ". " + tramite
-                + ".Estado " + estado + ". Pagado: " + pagado + ". Abierto el dia " + fechaApertura;
+                + ".Estado " + estado + ". Pagado: " + pagado + ". Abierto el dia " + fechaApertura + "\n";
     }
 
 }
