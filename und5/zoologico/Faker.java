@@ -1,4 +1,5 @@
-package und5.relacion2;
+package und5.zoologico;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -22,6 +23,18 @@ public class Faker {
             "Montevideo", "Quito", "La Paz", "San Salvador", "San José", "Managua", "Asunción", "Brasilia",
             "Lisboa", "Roma", "París", "Berlín", "Londres", "Nueva York", "Los Ángeles", "Chicago", "Toronto",
             "Tokio", "Seúl", "Pekín", "Bangkok", "Sídney", "Ámsterdam", "Dublín", "Moscú", "Atenas", "Dubái"
+    };
+
+    private static final String[] animales = {
+            "Perro", "Gato", "Caballo", "Vaca", "Oveja", "Cabra", "Cerdo", "Gallina", "Pato", "Pavo",
+            "León", "Tigre", "Elefante", "Jirafa", "Cebra", "Rinoceronte", "Hipopótamo", "Mono", "Gorila", "Chimpancé",
+            "Lobo", "Zorro", "Oso", "Ciervo", "Conejo", "Ardilla", "Ratón", "Murciélago", "Erizo", "Topo",
+            "Águila", "Halcón", "Búho", "Cuervo", "Paloma", "Gorrión", "Canario", "Loro", "Pingüino", "Flamenco",
+            "Tiburón", "Delfín", "Ballena", "Pulpo", "Calamar", "Cangrejo", "Langosta", "Medusa", "Estrella de mar",
+            "Caballito de mar", "Serpiente", "Lagarto", "Iguana", "Cocodrilo", "Tortuga", "Camaleón", "Rana", "Sapo", 
+            "Salamandra", "Dragón de Komodo", "Abeja", "Avispa", "Hormiga", "Mariposa", "Escarabajo", "Mosca", "Mosquito", 
+            "Saltamontes", "Grillo", "Libélula", "Canguro", "Koala", "Panda", "Zarigüeya", "Mapache", "Nutria", "Foca", 
+            "Morsa", "Antílope", "Bisonte"
     };
 
     // Fragmentos de texto Lorem Ipsum ampliado
@@ -72,6 +85,16 @@ public class Faker {
     public static String nombre() {
         int posicionAleatoria = entero(0, nombres.length - 1);
         return nombres[posicionAleatoria];
+    }
+
+        /**
+     * Genera un animal aleatorio.
+     * 
+     * @return Animal aleatorio.
+     */
+    public static String animales() {
+        int posicionAleatoria = entero(0, animales.length - 1);
+        return animales[posicionAleatoria];
     }
 
     /**
@@ -166,11 +189,12 @@ public class Faker {
 
             if (posicionVocalConTilde == -1) {
                 resultadoSinTildes += lectraActual;
-            }else{
+            } else {
                 resultadoSinTildes += vocalesSinTilde.get(posicionVocalConTilde);
             }
 
-            // resultadoSinTildes += posicionVocalConTilde == -1 ? lectraActual : vocalesSinTilde.get(posicionVocalConTilde);
+            // resultadoSinTildes += posicionVocalConTilde == -1 ? lectraActual :
+            // vocalesSinTilde.get(posicionVocalConTilde);
 
         }
 
@@ -179,19 +203,19 @@ public class Faker {
 
     // public static String tildesCase(String cadena) {
 
-    //     String resultado = cadena;
-    //     resultado = resultado.replace('á', 'a');
-    //     resultado = resultado.replace('é', 'e');
-    //     resultado = resultado.replace('í', 'i');
-    //     resultado = resultado.replace('ó', 'o');
-    //     resultado = resultado.replace('ú', 'u');
-    //     resultado = resultado.replace('Á', 'A');
-    //     resultado = resultado.replace('É', 'E');
-    //     resultado = resultado.replace('Í', 'I');
-    //     resultado = resultado.replace('Ó', 'O');
-    //     resultado = resultado.replace('Ú', 'U');
+    // String resultado = cadena;
+    // resultado = resultado.replace('á', 'a');
+    // resultado = resultado.replace('é', 'e');
+    // resultado = resultado.replace('í', 'i');
+    // resultado = resultado.replace('ó', 'o');
+    // resultado = resultado.replace('ú', 'u');
+    // resultado = resultado.replace('Á', 'A');
+    // resultado = resultado.replace('É', 'E');
+    // resultado = resultado.replace('Í', 'I');
+    // resultado = resultado.replace('Ó', 'O');
+    // resultado = resultado.replace('Ú', 'U');
 
-    //     return resultado;
+    // return resultado;
     // }
 
     /**
@@ -209,7 +233,7 @@ public class Faker {
         }
 
         return texto;
-        
+
     }
 
     /**
@@ -230,11 +254,6 @@ public class Faker {
     public static String loremLargo() {
         int cantidadPalabras = entero(20, 50);
         return lorem(cantidadPalabras);
-    }
-
-    public static String animales() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'animales'");
     }
 
 }

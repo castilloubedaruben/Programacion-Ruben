@@ -1,16 +1,16 @@
 package und5.zoologico;
 
 public class Animal {
-    public String nombre;
+    private String nombre;
     private String codigo;
     private int cantidad;
     private double precio;
 
-    private static int codigoNumerico=1;
+    private static int codigoNumerico = 1;
 
-    private void generadorCodigoAnimales(){
-        String prefijoCodigo="A-";
-        codigo=prefijoCodigo+codigoNumerico;
+    private void generadorCodigoAnimales() {
+        String prefijoCodigo = "A-";
+        codigo = prefijoCodigo + codigoNumerico;
         codigoNumerico++;
     }
 
@@ -21,12 +21,20 @@ public class Animal {
         setPrecio(precio);
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getCodigo() {
         return codigo;
     }
 
     public void setCodigo(String codigo) {
-        this.codigo=codigo;
+        this.codigo = codigo;
     }
 
     public int getCantidad() {
@@ -34,7 +42,7 @@ public class Animal {
     }
 
     public void setCantidad(int cantidad) {
-        if (cantidad>=0) {
+        if (cantidad >= 0) {
             this.cantidad = cantidad;
         }
     }
@@ -44,15 +52,15 @@ public class Animal {
     }
 
     public void setPrecio(double precio) {
-        if (precio>=0) {
+        if (precio >= 0) {
             this.precio = precio;
         }
     }
 
     @Override
     public String toString() {
-        return "\nCódigo: " +  codigo + " | Nombre: " + nombre + " | Cantidad: " + cantidad + " | Precio:" + precio + "€. \n";
+        return "\nCódigo: " + codigo + " | Nombre: " + nombre + " | Cantidad: " + cantidad + " | Precio:" + precio
+                + "€. \n";
     }
-
 
 }
