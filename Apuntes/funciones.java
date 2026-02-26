@@ -27,7 +27,7 @@ public class funciones {
             System.out.println("Elemento " + (i + 1) + " : " + array.get(i));
         }
     }
-
+    
     /**
      * Muestra dos ArrayList relacionados por indice
      *
@@ -183,7 +183,6 @@ public class funciones {
         array3.remove(indiceUsuario);
         imprimirMensaje("Eliminado correctamente");
 }
-
 
     /**
      * Añade a un array comprobando si esta duplicado
