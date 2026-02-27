@@ -108,9 +108,24 @@ public class Main {
                 }
                 
             } else if (opcionUsuario == 4) {
+                System.out.println("Indique el codigo del animal a retirar ejemplares");
+                String codigoAnimalRetirar=sc.nextLine();
+                int cantidadRetirar=leerInt("Indique cantidad a retirar", sc);
 
+                if (!zoologico.retirarEjemplares(codigoAnimalRetirar, cantidadRetirar).get(0)) {
+                    System.out.println("No se han podido retirar esa cantidad de animales");
+                } else if (!zoologico.retirarEjemplares(codigoAnimalRetirar, cantidadRetirar).get(1)) {
+                    System.out.println("No se ha encontrado el animal");
+                } else {
+                    System.out.println("Ejemplares retirados correctamente");
+                }
             } else if (opcionUsuario == 5) {
-
+                if (zoologico.eliminarAnimal("A-1")) {
+                    System.out.println("Animal eliminado correctamente");
+                } else {
+                    System.out.println("No se ha podido eliminar el animal");
+                }
+                
             } else {
                 salirPrograma = true;
             }
