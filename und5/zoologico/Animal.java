@@ -64,7 +64,7 @@ public void setNombre(String nombre) {
     @Override
     public String toString() {
         return "\nCódigo: " + codigo + " | Nombre: " + nombre + " | Cantidad: " + cantidad + " | Precio:" + precio
-                + "€. \n";
+                + "€.";
     }
 
 }

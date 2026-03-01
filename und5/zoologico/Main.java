@@ -2,7 +2,6 @@ package und5.zoologico;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import und5.zoologico.Faker;
 
 public class Main {
 
