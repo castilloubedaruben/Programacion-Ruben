@@ -2,16 +2,17 @@ package und5.zoologico;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import und5.zoologico.Faker;
 
 public class Main {
 
-        /*
+    /*
      * 
      * @param mensajeAMostrar
      */
     public static void imprimirMensaje(String mensajeAMostrar) {
         System.out.println(mensajeAMostrar);
-    }   
+    }
 
     /**
      * Lee un numero entero del usuario con control de errores
@@ -66,66 +67,73 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Animal animal1 = new Animal(Faker.animales(), Faker.entero(1, 20), Faker.precio(5.00, 50.00));
-        Animal animal2 = new Animal(Faker.animales(), Faker.entero(1, 20), Faker.precio(5.00, 50.00));
-        Animal animal3 = new Animal(Faker.animales(), Faker.entero(1, 20), Faker.precio(5.00, 50.00));
-        Zoologico zoologico = new Zoologico("Selvo", "Malaga", 500, "09-20", new ArrayList<>());
 
-        zoologico.agregarAnimal(animal1);
-        zoologico.agregarAnimal(animal2);
-        zoologico.agregarAnimal(animal3);
-
+        Zoologico zoologico = new Zoologico("Selvo", new ArrayList<>());
         Scanner sc = new Scanner(System.in);
-        final String MENU = "\nOpciones:\n1:Mostrar animales\n2:Buscar animal por codigo\n3:Agregar ejemplares de un animal \n4:Retirar ejemplares de un animal \n5:Eliminar un animal \n6:Salir";
+
+        final int CANTIDADANIMALES = 10;
+
+        for (int i = 0; i < CANTIDADANIMALES; i++) {
+            zoologico.agregarAnimal(new Animal(Faker.nombreAnimal(), Faker.cantidadAnimal(), Faker.precio(5.00, 100.00)));
+        }
+
+        final String MENU = "\n===== GESTIÓN DE ZOOLOGICO =====:\n1:Mostrar animales\n2:Buscar animal por codigo\n3:Agregar ejemplares de un animal \n4:Retirar ejemplares de un animal \n5:Eliminar un animal \n6:Salir";
         boolean salirPrograma = false;
         int opcionUsuario = 0;
 
         while (!salirPrograma) {
-                opcionUsuario=leerOpcionMenu(MENU, 1, 6, sc);
+            opcionUsuario = leerOpcionMenu(MENU, 1, 6, sc);
             if (opcionUsuario == 1) {
-                zoologico.mostrarAnimales("Animales disponibles");
-            } else if (opcionUsuario == 2) {
-                // System.out.println("Indique el codigo del animal a buscar");
-                // String codigoAnimalBuscar=sc.nextLine();
-                // Animal animalEncontrado;
-                // if (zoologico.buscarAnimal(codigoAnimalBuscar)) {
-                //     for (int i = 0; i < zoologico.getAnimales().size(); i++) {
-                //         animales.get(i).getCodigo.equalsIgnoreCase(codigoAnimalBuscar);
-                //         animalEncontrado=zoologico.getAnimales().get(i);
-                //     }
-                // } else {
-                //     System.out.println("Animal no encontrado");
-                // }
-                
-            } else if (opcionUsuario == 3) {
-                System.out.println("Indique el codigo del animal a buscar");
-                String codigoAnimalBuscar=sc.nextLine();
-                int cantidad=leerInt("Indique la cantidad a añadir", sc);
-                if (zoologico.agregarEjemplares(codigoAnimalBuscar, cantidad)) {
-                    System.out.println(cantidad + " animales añadidos correctamente");
-                } else {
-                    System.out.println("No se han podido añadir animales");
+                for (Animal animal : zoologico.getAnimales()) {
+                    imprimirMensaje(animal.toString());
                 }
-                
-            } else if (opcionUsuario == 4) {
-                System.out.println("Indique el codigo del animal a retirar ejemplares");
-                String codigoAnimalRetirar=sc.nextLine();
-                int cantidadRetirar=leerInt("Indique cantidad a retirar", sc);
-
-                if (!zoologico.retirarEjemplares(codigoAnimalRetirar, cantidadRetirar).get(0)) {
-                    System.out.println("No se han podido retirar esa cantidad de animales");
-                } else if (!zoologico.retirarEjemplares(codigoAnimalRetirar, cantidadRetirar).get(1)) {
-                    System.out.println("No se ha encontrado el animal");
+            } else if (opcionUsuario == 2) {
+                imprimirMensaje("Indique el código del animal a buscar:");
+                String codigoAnimalBuscar = sc.nextLine();
+                Animal animalBuscar = zoologico.buscarAnimal(codigoAnimalBuscar);
+                if (animalBuscar != null) {
+                    imprimirMensaje(animalBuscar.toString());
                 } else {
-                    System.out.println("Ejemplares retirados correctamente");
+                    imprimirMensaje("Animal no encontrado.");
+                }
+
+            } else if (opcionUsuario == 3) {
+                imprimirMensaje("Indique el código del animal:");
+                String codigo = sc.nextLine();
+                int cantidad = leerInt("Indique cantidad a añadir:", sc);
+                if (zoologico.agregarEjemplares(codigo, cantidad)) {
+                    imprimirMensaje("Ejemplares añadidos correctamente.");
+                } else {
+                    imprimirMensaje("Animal no encontrado.");
+                }
+
+            } else if (opcionUsuario == 4) {
+                imprimirMensaje("Indique el código del animal:");
+                String cod = sc.nextLine();
+                int cant = leerInt("Indique cantidad a retirar:", sc);
+
+                ArrayList<Boolean> controlErroresRetirarAnimales = zoologico.retirarEjemplares(cod, cant);
+
+                if (!controlErroresRetirarAnimales.get(0)) {
+                    imprimirMensaje("Animal no encontrado.");
+                } else if (!controlErroresRetirarAnimales.get(1)) {
+                    imprimirMensaje("No se puede retirar más ejemplares de los disponibles.");
+                } else {
+                    imprimirMensaje("Ejemplares retirados correctamente.");
                 }
             } else if (opcionUsuario == 5) {
-                if (zoologico.eliminarAnimal("A-1")) {
-                    System.out.println("Animal eliminado correctamente");
+                imprimirMensaje("Indique el código del animal a eliminar:");
+                String codigo = sc.nextLine();
+                Animal animalAEliminar = zoologico.buscarAnimal(codigo);
+
+                if (animalAEliminar == null) {
+                    imprimirMensaje("Animal no encontrado.");
+                } else if (animalAEliminar.getCantidad() > 0) {
+                    imprimirMensaje("No se puede eliminar un animal con ejemplares disponibles.");
                 } else {
-                    System.out.println("No se ha podido eliminar el animal");
+                    zoologico.eliminarAnimal(codigo);
+                    imprimirMensaje("Animal eliminado correctamente.");
                 }
-                
             } else {
                 salirPrograma = true;
             }

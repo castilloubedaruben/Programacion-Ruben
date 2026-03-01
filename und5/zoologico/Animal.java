@@ -25,15 +25,19 @@ public class Animal {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+public void setNombre(String nombre) {
+    if (nombre != null && !nombre.trim().isEmpty()) {
+        this.nombre = nombre.trim(); 
+    } else {
+        this.nombre = "VACIO"; 
     }
+}
 
     public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    private void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -52,7 +56,7 @@ public class Animal {
     }
 
     public void setPrecio(double precio) {
-        if (precio >= 0) {
+        if (precio > 0) {
             this.precio = precio;
         }
     }
